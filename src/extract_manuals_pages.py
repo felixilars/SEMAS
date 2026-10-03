@@ -106,7 +106,7 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
 
 
 def main():
-    base_dir = Path("../SEMAS")
+    base_dir = Path("../")
     raw_manuals_dir = base_dir / "data" / "raw_manuals" / ">300dpi"
     output_base_dir = base_dir / "data" / "extracted_manuals"
 
