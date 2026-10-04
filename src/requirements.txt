@@ -1,0 +1,2 @@
+# "extract_manuals_pages.py"
+pymupdf
