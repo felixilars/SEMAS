@@ -1,4 +1,4 @@
-import os
+# import os
 from pathlib import Path
 
 DEVICE_SHORT_NAMES = {
@@ -35,13 +35,14 @@ MANUALS_PAGES = {
 CATEGORIES = ["bom", "schematic", "pcb"]
 
 
-def create_directory_structure(output_base_dir, manuals_dict):
+def create_directory_structure(output_base_dir: Path, manuals_dict):
     """
-    output_base_dir/
-      └── <manual_name>/
-          ├── bom/
-          ├── schematic/
-          └── pcb/
+    Generate inside `output_base_dir` directory structure as follows:
+        output_base_dir/
+          └── <manual_name>/    # Name of each manual listed in `manuals_dict`.
+              ├── bom/          # for BOM pages
+              ├── schematic/    # for Schematic pages
+              └── pcb/          # for PCB pages
     """
     output_base_dir.mkdir(parents=True, exist_ok=True)
 
@@ -54,9 +55,9 @@ def create_directory_structure(output_base_dir, manuals_dict):
     print("Create directory structure: " + str(output_base_dir))
 
 
-def find_pdf_file(raw_manuals_dir, manual_name):
+def find_pdf_file(raw_manuals_dir: Path, manual_name: str) -> Path | None:
     """
-    Find PDF file in raw_manuals directory.
+    Find PDF file in `raw_manuals_dir` if it exists, returns None otherwise.
     """
     for file in raw_manuals_dir.rglob("*.pdf"):
         if file.stem == manual_name:
@@ -64,26 +65,29 @@ def find_pdf_file(raw_manuals_dir, manual_name):
     return None
 
 
-def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, device_names=None, zoom_x=2.0, zoom_y=2.0):
+def extract_pages_to_images(manuals_dict,
+                            raw_manuals_dir: Path,
+                            output_base_dir: Path,
+                            device_names=None):
     """
     Extract pages to images and save them to the corresponding folders.
     """
     if device_names is None:
         device_names = DEVICE_SHORT_NAMES
 
-    import fitz 
+    import pymupdf
 
-    matrix = fitz.Matrix(4.167, 4.167)  # Increase image resolution
+    matrix = pymupdf.Matrix(4.167, 4.167)  # Increase image resolution
 
     for manual_name, categories in manuals_dict.items():
         pdf_path = find_pdf_file(raw_manuals_dir, manual_name)
         if not pdf_path:
-            print("Not found PDF file for: " + manual_name + " in " + raw_manuals_dir)
+            print("Not found PDF file for: " + manual_name + " in " + str(raw_manuals_dir))
             continue
 
         device_short_name = device_names.get(manual_name, manual_name)
         print("\nProcessing: " + pdf_path.name + " (Device short name: " + device_short_name + ")")
-        doc = fitz.open(pdf_path)
+        doc = pymupdf.open(pdf_path)
 
         for category, pages in categories.items():
             save_dir = output_base_dir / manual_name / category
@@ -106,6 +110,7 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
 
 
 def main():
+    """Extract images of each source category from high-quality raw manuals directory in `extracted_manuals` directory."""
     base_dir = Path("../")
     raw_manuals_dir = base_dir / "data" / "raw_manuals" / ">300dpi"
     output_base_dir = base_dir / "data" / "extracted_manuals"
