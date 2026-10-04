@@ -59,7 +59,13 @@ def extract_pages_to_images(manuals_dict,
                             output_base_dir: Path,
                             device_names=None):
     """
-    Extract pages to images and save them to the corresponding folders.
+    Extract pages to images and save them inside a directory structure, in their corresponding folders.
+
+    Args:
+        manuals_dict: Dictionary of manuals and the index of their parts of interest
+        raw_manuals_dir: Path to the raw manuals directory
+        output_base_dir: Path to the output directory
+        device_names: Table of optional short names for manuals name
     """
     if device_names is None:
         device_names = DEVICE_SHORT_NAMES
