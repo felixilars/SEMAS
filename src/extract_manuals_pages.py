@@ -1,7 +1,7 @@
-import os
+from __future__ import annotations
 from pathlib import Path
 
-# Define short names for each document to name image files
+# Short document names
 DEVICE_SHORT_NAMES: dict[str, str] = {
     "Acoustic_Control_450_Lead_Bass_Guitar_Amplifier_Service Manual_1974": "Acoustic_450",
     "Akai_AM-M630_AM-M830_Digital_Integrated_Amplifier_Service_Manual": "Akai_AM_M630_M830",
@@ -16,7 +16,7 @@ DEVICE_SHORT_NAMES: dict[str, str] = {
     "manualsplus_13963": "McIntosh_MC_2100",
 }
 
-# Note: The page numbers here are display page numbers in the document (1-based index)
+# 1-based display page numbers
 MANUALS_PAGES: dict[str, dict[str, list[int]]] = {
     "Acoustic_Control_450_Lead_Bass_Guitar_Amplifier_Service Manual_1974": {
         "bom": [14,15,16,17],
@@ -79,13 +79,10 @@ CATEGORIES = ["bom", "schematic", "pcb"]
 
 
 def create_directory_structure(output_base_dir, manuals_dict):
-    """
-    Create folder hierarchy for manual pages:
-    output_base_dir/
-      └── <manual_name>/
-          ├── bom/
-          ├── schematic/
-          └── pcb/
+    """ Create folder hierarchy for manual pages.
+    Args:
+      - output_base_dir (Path) : Base destination directory.
+      - manuals_dict (dict) : Mapping of manual names to category pages
     """
     output_base_dir.mkdir(parents=True, exist_ok=True)
 
@@ -95,17 +92,16 @@ def create_directory_structure(output_base_dir, manuals_dict):
             cat_dir = manual_folder / category
             cat_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"Created directory structure at: {output_base_dir}")
+    print("Created directory structure at: " + str(output_base_dir))
 
 
 def find_pdf_file(raw_manuals_dir, manual_name):
-    """
-    Find PDF file recursively in raw_manuals directory matching manual_name stem.
+    """ Find PDF file recursively in raw_manuals directory matching manual_name stem.
+
     Args:
-        raw_manuals_dir: Directory of raw manuals
-        manual_name: Name of the manual
-    Returns:
-        Path to the PDF file or None if not found
+      - raw_manuals_dir (Path) : Directory containing raw manual PDFs.
+      - manual_name (str) : Name of the target manual.
+    Returns: Path to the PDF file or None if not found.
     """
     for file in raw_manuals_dir.rglob("*.pdf"):
         if file.stem == manual_name:
@@ -113,16 +109,14 @@ def find_pdf_file(raw_manuals_dir, manual_name):
     return None
 
 
-def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, device_names, zoom_x=2.0, zoom_y=2.0):
-    """
-    Extract specified pages to PNG images and save to category folders.
+def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, device_names):
+    """ Extract specified pages to PNG images and save to category folders.
+
     Args:
-        manuals_dict: Dictionary of manuals and their page numbers
-        raw_manuals_dir: Directory of raw manuals
-        output_base_dir: Directory of output images
-        device_names: Dictionary of device names
-        zoom_x: Zoom factor for x-axis
-        zoom_y: Zoom factor for y-axis
+      - manuals_dict (dict) : Dictionary of manuals and their page numbers.
+      - raw_manuals_dir (Path) : Directory of raw manuals.
+      - output_base_dir (Path) : Directory of output images.
+      - device_names (dict) : Dictionary mapping manual names to short names
     """
     if device_names is None:
         device_names = DEVICE_SHORT_NAMES
@@ -136,18 +130,18 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
     matrix = fitz.Matrix(4.167, 4.167)  # High resolution (~300 DPI)
 
     for manual_name, categories in manuals_dict.items():
-        # Check if there are any pages configured for this manual
+        # Check configured pages
         total_pages_configured = sum(len(pages) for pages in categories.values())
         if total_pages_configured == 0:
             continue
 
         pdf_path = find_pdf_file(raw_manuals_dir, manual_name)
         if not pdf_path:
-            print(f"[Warning] PDF file not found for: '{manual_name}' in {raw_manuals_dir}")
+            print("[Warning] PDF file not found for: " + str(manual_name) + " in " + str(raw_manuals_dir))
             continue
 
         device_short_name = device_names.get(manual_name, manual_name)
-        print(f"\nProcessing: {pdf_path.name} (Short name: {device_short_name})")
+        print("\nProcessing: " + pdf_path.name + " (Short name: " + device_short_name + ")")
         doc = fitz.open(pdf_path)
 
         for category, pages in categories.items():
@@ -158,23 +152,23 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
             save_dir.mkdir(parents=True, exist_ok=True)
 
             for page_num in pages:
-                # Convert 1-based (display page) to 0-based index
+                # Convert to 0-based index
                 page_idx = page_num - 1
 
                 if 0 <= page_idx < len(doc):
                     page = doc[page_idx]
                     pix = page.get_pixmap(matrix=matrix)
-                    out_img_path = save_dir / f"{device_short_name}_page_{page_num:03d}.png"
+                    out_img_path = save_dir / (device_short_name + "_page_" + str(page_num).zfill(3) + ".png")
                     pix.save(str(out_img_path))
-                    print(f"  -> Save [{category}]: {out_img_path.name}")
+                    print("[INFO] Saved " + category + ": " + out_img_path.name)
                 else:
-                    print(f"  [!] Page {page_num} exceeds total pages ({len(doc)} pages)")
+                    print("[WARN] Page " + str(page_num) + " exceeds total pages (" + str(len(doc)) + " pages)")
 
         doc.close()
 
-
 def main():
-    # Resolve project root robustly regardless of current execution directory
+    """ Run page extraction across all configured service manuals """
+    # Resolve paths
     base_dir = Path(__file__).resolve().parent.parent
     raw_manuals_dir = base_dir / "data" / "raw_manuals"
     output_base_dir = base_dir / "data" / "extracted_manuals"
@@ -182,8 +176,7 @@ def main():
     create_directory_structure(output_base_dir, MANUALS_PAGES)
 
     if raw_manuals_dir.exists():
-        extract_pages_to_images(MANUALS_PAGES, raw_manuals_dir, output_base_dir, device_names=DEVICE_SHORT_NAMES)
-
+        extract_pages_to_images(MANUALS_PAGES, raw_manuals_dir, output_base_dir, DEVICE_SHORT_NAMES)
 
 if __name__ == "__main__":
     main()
