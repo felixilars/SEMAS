@@ -34,12 +34,14 @@ class SchemaFinder:
             result = self.model.predict(source=page, **self.params)
             for box in result[0].boxes:
                 # Récupération des coordonnées de la zone
-                x,y,y1,x1 = map(int, box.xyxy[0])
-                margin = 10 # Ajout d'une marge
-                y1_m = max(0, y-margin)
-                y2_m = min(page_array.shape[0], y1 + margin)
-                x1_m = max(0, x-margin)
-                x2_m = min(page_array.shape[1], x1 + margin)
+                x1,y1,x2,y2 = map(int, box.xyxy[0])
+                # Ajout d'une marge à la découpe de la zone
+                margin = 10
+                y1_m = max(0, y1-margin)
+                y2_m = min(page_array.shape[0], y2 + margin)
+                x1_m = max(0, x1-margin)
+                x2_m = min(page_array.shape[1], x2 + margin)
+                # Découpe de la zone détectée
                 crop = page_array[y1_m:y2_m, x1_m:x2_m]
                 if crop is not None and crop.size > 0:
                     # Récupération de la classe de la zone
