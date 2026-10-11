@@ -1,2 +1,7 @@
 # "extract_manuals_pages.py"
 pymupdf
+
+# "SchemaFinder.py
+cv2
+numpy
+pdf2image
