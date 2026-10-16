@@ -13,7 +13,7 @@
 - ### Pas besoin d'installer les librairies au préalable pour un utilisateur voulant utiliser le programme!!
   On souhaiterais rendre l'utilisation la plus simple possible même pour des personnes ne sachant pas utiliser un terminal!
 
-### on souhaiterais offrir un logiciel plus simple à executer (même pour les personnes les moins à l'aise en informatique),  ainsi qu'une meilleure organisation des fichiers et documentation. 
+#### On souhaiterais offrir un logiciel plus simple à executer (même pour les personnes les moins à l'aise en informatique),  ainsi qu'une meilleure organisation des fichiers et documentation. 
 
 ### SOLUTIONS 
 PyInstaller, cette librarie va nous permettre de créer un executable à partir d'un projet python, d'en faire un unique fichier qu'on pourra envoyer directement à un utilisateur. Celui-ci n'aura qu'à le lancer, sans avoir besoin d'installer python, librairies ou même d'env virtuelle!! 
