@@ -14,3 +14,6 @@
 
 
 ### => En conclusion, on souhaiterais offrir un logiciel plus simple à executer (même pour les personnes les moins à l'aise en informatique), une interface intuitives et fluide, ainsi qu'une meilleure organisation des fichiers et documentation. 
+
+##  2) Augmenter les performance 
+- ### programme trop lent au lancement et plante pour certains PC
