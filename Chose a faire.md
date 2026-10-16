@@ -2,8 +2,8 @@
 
 ##  1) Ranger le programme en ordre et claire => polir le travail de l'année précédente 
 - ### Les dossiers sont placés de manières confuses:
- - Certains sont mentionnés dans le programme mais manque à l'appel
- - Il y a la présence de plusieurs full_code
+     - Certains sont mentionnés dans le programme mais manque à l'appel
+     - Il y a la présence de plusieurs full_code
 - ### Un seul fichier à executer
   On souhaiterais pouvoir proposer à l'utilisateur un seul fichier (executable) permettant de lancer une interface demandant les manuel, et qui lancera par la suite le programme python pour le déchiffrer en arrière plan.
 ( SI POSSIBLE: Egalement, en demandant l'autorisation à l'utilisateur d'installer les librairies necessaires dans un env virtuel crée ou qu'on aura crée (préférable) 
