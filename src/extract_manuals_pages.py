@@ -92,31 +92,30 @@ def create_directory_structure(output_base_dir, manuals_dict):
             cat_dir = manual_folder / category
             cat_dir.mkdir(parents=True, exist_ok=True)
 
-    print("Created directory structure at: " + str(output_base_dir))
+    print("[INFO] Created directory structure at: " + str(output_base_dir))
 
 
-def find_pdf_file(raw_manuals_dir, manual_name):
-    """ Find PDF file recursively in raw_manuals directory matching manual_name stem.
+def build_pdf_index(raw_manuals_dir):
+    """ Build a lookup index mapping manual stem names to PDF paths in a single directory walk.
 
     Args:
       - raw_manuals_dir (Path) : Directory containing raw manual PDFs.
-      - manual_name (str) : Name of the target manual.
-    Returns: Path to the PDF file or None if not found.
+    Returns: Dict mapping file stem strings to Path instances.
     """
-    for file in raw_manuals_dir.rglob("*.pdf"):
-        if file.stem == manual_name:
-            return file
-    return None
+    if not raw_manuals_dir.exists():
+        return {}
+    return {f.stem: f for f in raw_manuals_dir.rglob("*.pdf")}
 
 
-def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, device_names):
+def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, device_names, force=False):
     """ Extract specified pages to PNG images and save to category folders.
 
     Args:
       - manuals_dict (dict) : Dictionary of manuals and their page numbers.
       - raw_manuals_dir (Path) : Directory of raw manuals.
       - output_base_dir (Path) : Directory of output images.
-      - device_names (dict) : Dictionary mapping manual names to short names
+      - device_names (dict) : Dictionary mapping manual names to short names.
+      - force (bool) : Whether to re-render pages if they already exist on disk.
     """
     if device_names is None:
         device_names = DEVICE_SHORT_NAMES
@@ -124,10 +123,11 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
     try:
         import pymupdf as fitz 
     except ImportError:
-        print("[Error] PyMuPDF (fitz) is not installed.")
+        print("[ERROR] PyMuPDF (fitz) is not installed.")
         return
 
     matrix = fitz.Matrix(4.167, 4.167)  # High resolution (~300 DPI)
+    pdf_index = build_pdf_index(raw_manuals_dir)
 
     for manual_name, categories in manuals_dict.items():
         # Check configured pages
@@ -135,13 +135,13 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
         if total_pages_configured == 0:
             continue
 
-        pdf_path = find_pdf_file(raw_manuals_dir, manual_name)
+        pdf_path = pdf_index.get(manual_name)
         if not pdf_path:
-            print("[Warning] PDF file not found for: " + str(manual_name) + " in " + str(raw_manuals_dir))
+            print("[WARN] PDF file not found for: " + str(manual_name) + " in " + str(raw_manuals_dir))
             continue
 
         device_short_name = device_names.get(manual_name, manual_name)
-        print("\nProcessing: " + pdf_path.name + " (Short name: " + device_short_name + ")")
+        print("\n[INFO] Processing: " + pdf_path.name + " (Short name: " + device_short_name + ")")
         doc = fitz.open(pdf_path)
 
         for category, pages in categories.items():
@@ -154,11 +154,16 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
             for page_num in pages:
                 # Convert to 0-based index
                 page_idx = page_num - 1
+                out_img_path = save_dir / (device_short_name + "_page_" + str(page_num).zfill(3) + ".png")
+
+                # Caching check: avoid expensive high-DPI re-rendering if page already exists
+                if out_img_path.exists() and not force:
+                    print("[INFO] Using cached page: " + out_img_path.name)
+                    continue
 
                 if 0 <= page_idx < len(doc):
                     page = doc[page_idx]
                     pix = page.get_pixmap(matrix=matrix)
-                    out_img_path = save_dir / (device_short_name + "_page_" + str(page_num).zfill(3) + ".png")
                     pix.save(str(out_img_path))
                     print("[INFO] Saved " + category + ": " + out_img_path.name)
                 else:
