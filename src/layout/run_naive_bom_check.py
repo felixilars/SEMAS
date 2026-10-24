@@ -43,6 +43,6 @@ def run_crop_diagnostic(image_path, output_path):
     print("[RESULT] Inspection on Sony TA-1630 page confirms RefDes column is cleanly isolated.")
 
 if __name__ == "__main__":
-    src_file = Path("/home/felixilars/Desktop/Etude_Pratique/SEMAS/data/extracted_manuals/Sony-TA-1630-Service-Manual/bom/Sony_TA_1630_page_009.png")
-    dst_file = Path("/home/felixilars/Desktop/Etude_Pratique/SEMAS/data/debug_crops/sony_ta1630_p006_naive_crop.png")
+    src_file = Path("data/extracted_manuals/manualsplus_13963/bom/McIntosh_MC_2100_page_010.png")
+    dst_file = Path("data/debug_crops/McIntosh_MC_2100_p010_naive_crop.png")
     run_crop_diagnostic(src_file, dst_file)
