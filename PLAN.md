@@ -12,15 +12,15 @@ Les appareils audio vintage (amplificateurs, récepteurs, platines cassette des 
 
 ## 2. Ce que le groupe de l'année dernière a réalisé et analyse de leur projet
 
-- Le groupe de l'année dernière a réalisé un Proof of Concept (PoC) — c'est-à-dire qu'ils ont prouvé la faisabilité technique, mais ils n'ont pas totalement packagé le projet sous forme de produit. 
+- Le groupe de l'année dernière a réalisé un Proof of Concept (PoC), c'est-à-dire qu'ils ont prouvé la faisabilité technique, mais ils n'ont pas totalement packagé le projet sous forme de produit. 
 - Ils ont utilisé YOLO pour entraîner l'IA. Ils ont créé 2 modèles. Le premier a pour rôle, lorsqu'on lui fournit un fichier PDF, de savoir quelle est la page contenant le schéma théorique, quelle est la page du PCB et quelle est la page de la BOM. Le deuxième modèle est chargé de localiser les étiquettes de désignation des composants (`compo_name`) sur le schéma de principe et le PCB.
 - **Points faibles :** 
-  - J'ai examiné leur jeu de données : il y a au total 62 images utilisées pour entraîner l'IA (en réalité, seulement une vingtaine de pages originales sur lesquelles ils ont appliqué différentes techniques d'augmentation de données pour multiplier les images) -> selon moi, ce n'est pas un bon dataset.
+  - J'ai examiné leur jeu de données : il y a au total 62 images utilisées pour entraîner l'IA (en réalité, seulement une vingtaine de pages originales sur lesquelles ils ont appliqué différentes techniques d'augmentation de données pour multiplier les images), ce qui ne constitue pas un jeu de données suffisant.
   - Ils ont entraîné l'IA, mais ils ne sont pas en mesure de fournir des chiffres précis tels que le taux d'exactitude (précision), ni d'explications sur le réglage des hyperparamètres de l'IA.
 
-> **--> Au vu de ce qui précède et des éléments décrits par le professeur dans la description du projet, je pense que les objectifs du projet cette année sont les suivants :**
-> 1. Améliorer les points faibles de l'année dernière (je détaillerai plus loin comment les améliorer).
-> 2. Nous devons finaliser 2 produits : au bureau et à l'atelier.
+> Au vu de ce qui précède et des éléments décrits par le professeur dans la description du projet, les objectifs du projet cette année sont les suivants :
+> 1. Améliorer les points faibles de l'année dernière (détaillés plus loin).
+> 2. Finaliser 2 produits cibles : au bureau et à l'atelier.
 
 ---
 
@@ -79,7 +79,7 @@ flowchart TD
 
 ## 5. Les étapes de construction à partir de zéro :
 
-### Étape 1 : Collecte des documents sources (Data Sourcing) - manuels de service (fichiers PDF)
+### Étape 1 : Collecte des documents sources (Data Sourcing) : manuels de service en PDF
 - **Objectif :** Disposer de suffisamment de fichiers PDF pour le prétraitement des données.
 - **Critères d'un fichier PDF standard :** Doit impérativement comporter les 3 parties :
   1. *Parts List / BOM* (Nomenclature des composants).
