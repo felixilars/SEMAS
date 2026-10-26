@@ -1,7 +1,8 @@
 """
-Dynamic Gutters Visual Diagnostic Script (Day 4)
-================================================
-Applies vertical projection gutter detection across Sony, McIntosh, and Toshiba,drawing green boundaries around detected columns and saving debug visualizations.
+Dynamic Gutters Visual Diagnostic Script
+========================================
+Applies vertical projection gutter detection across Sony, McIntosh, and Toshiba,
+drawing green boundaries around detected columns and saving debug visualizations.
 """
 
 import sys

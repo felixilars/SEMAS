@@ -31,7 +31,7 @@ def process_manual_crop(image_path, output_dir, parser):
         print("[ERROR] Cannot read image: " + str(image_path))
         return None
 
-    # Crop vertical slice using the parser defined in Day 2
+    # Crop vertical slice using parser margin bounds
     crop, x1, x2 = parser.crop_refdes_column(image)
 
     # Build clear output filename

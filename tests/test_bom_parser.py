@@ -1,7 +1,8 @@
 """
 Unit Tests for BOM Parser
-==================================================
-Validates margin slicing math, candidate regex filtering, and coordinate remapping.
+=========================
+Validates margin slicing math, candidate regex filtering, coordinate remapping,
+and full pipeline execution with token coalescing and range expansion.
 """
 
 import sys
@@ -11,13 +12,15 @@ import pytest
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from src.layout.bom_parser import NaiveBOMParser
+from src.layout.bom_parser import NaiveBOMParser, BOMParser
+
 
 class MockOCREngine:
     """ Mock OCR engine returning pre-defined text boxes for testing."""
 
     def __init__(self, mock_results):
         """ Initialize mock engine with fixture detections.
+
         Args:
           - mock_results (list) : List of fixture prediction dictionaries.
         """
@@ -25,11 +28,13 @@ class MockOCREngine:
 
     def recognize(self, image):
         """ Return canned bounding boxes regardless of input pixels.
+
         Args:
           - image (np.ndarray) : Ignored test image.
         Returns: List of detection dictionaries.
         """
         return self.mock_results
+
 
 def test_crop_refdes_column_dimensions():
     """ Verify horizontal percentage slice calculation."""
@@ -38,9 +43,10 @@ def test_crop_refdes_column_dimensions():
 
     crop, x1, x2 = parser.crop_refdes_column(dummy_img)
 
-    assert x1 == 200  # 10% of 2000
-    assert x2 == 500  # 25% of 2000
+    assert x1 == 200
+    assert x2 == 500
     assert crop.shape == (1000, 300, 3)
+
 
 def test_is_valid_refdes_token_positives():
     """ Verify accepted electronics reference designators."""
@@ -51,6 +57,7 @@ def test_is_valid_refdes_token_positives():
     assert parser.is_valid_refdes_token("IC01") is True
     assert parser.is_valid_refdes_token("R101A") is True
 
+
 def test_is_valid_refdes_token_negatives():
     """ Verify rejection of non-refdes strings, headers, and descriptions."""
     parser = NaiveBOMParser()
@@ -60,15 +67,15 @@ def test_is_valid_refdes_token_negatives():
     assert parser.is_valid_refdes_token("ELECTROLYTIC") is False
     assert parser.is_valid_refdes_token("PARTS LIST") is False
 
+
 def test_parse_page_naive_coordinate_remapping():
     """ Verify that bounding boxes in cropped space map back to whole-page normalized space."""
     parser = NaiveBOMParser(left_ratio=0.10, right_ratio=0.25)
     dummy_img = np.zeros((1000, 2000, 3), dtype=np.uint8)
 
-    # In crop of width 300 px (x_offset = 200 px), item is located at [10, 50, 60, 80]
     mock_detections = [
         {"text": "R102", "bbox": [10, 50, 60, 80], "confidence": 0.95},
-        {"text": "DESCRIPTION", "bbox": [80, 50, 200, 80], "confidence": 0.90},  # should be filtered out
+        {"text": "DESCRIPTION", "bbox": [80, 50, 200, 80], "confidence": 0.90},
     ]
     mock_engine = MockOCREngine(mock_detections)
 
@@ -80,12 +87,42 @@ def test_parse_page_naive_coordinate_remapping():
     assert item.page_number == 6
     assert item.bbox is not None
 
-    # Full page X coordinates:
-    # x1 = (200 + 10) / 2000 = 0.105
-    # x2 = (200 + 60) / 2000 = 0.130
-    # y1 = 50 / 1000 = 0.050
-    # y2 = 80 / 1000 = 0.080
     assert round(item.bbox.x1, 3) == 0.105
     assert round(item.bbox.x2, 3) == 0.130
     assert round(item.bbox.y1, 3) == 0.050
     assert round(item.bbox.y2, 3) == 0.080
+
+
+def test_bom_parser_coalesce_and_expand_pipeline():
+    """ Verify BOMParser integrates dynamic gutters, token coalescing, and range expansion."""
+    parser = BOMParser(min_col_width=100, min_gutter_width=30)
+
+    # Synthetic image (1000x1000): white page with two text blocks
+    # Content col 1: x in [50, 450], Gutter: [450, 550], Content col 2: [550, 950]
+    dummy_img = np.full((1000, 1000, 3), 255, dtype=np.uint8)
+    # Ink stripes to create text content
+    dummy_img[100:900, 100:400] = 0
+    dummy_img[100:900, 600:900] = 0
+
+    # Column detections:
+    # 1. Split token: 'R' + '101' -> should coalesce into 'R101'
+    # 2. Range token: 'C201-203' -> should expand into 'C201', 'C202', 'C203'
+    # 3. Non-refdes token: 'RESISTOR' -> should be filtered out
+    mock_detections = [
+        {"text": "R", "bbox": [20, 100, 40, 130], "confidence": 0.99},
+        {"text": "101", "bbox": [45, 100, 90, 130], "confidence": 0.98},
+        {"text": "C201-203", "bbox": [20, 200, 120, 230], "confidence": 0.95},
+        {"text": "RESISTOR", "bbox": [150, 100, 300, 130], "confidence": 0.90},
+    ]
+    mock_engine = MockOCREngine(mock_detections)
+
+    items = parser.parse_page(dummy_img, 1, mock_engine)
+    ref_names = [it.ref_des for it in items]
+
+    # Both columns in dummy_img will receive mock_detections
+    # Each column should yield 'R101', 'C201', 'C202', 'C203'
+    assert "R101" in ref_names
+    assert "C201" in ref_names
+    assert "C202" in ref_names
+    assert "C203" in ref_names
+    assert "RESISTOR" not in ref_names

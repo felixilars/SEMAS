@@ -1,7 +1,8 @@
 """
 BOM Table Parser Module
 =======================
-Extracts electronic component references from tabular Bill of Materials pages using dynamic column segmentation and horizontal token coalescing.
+Extracts electronic component references from tabular Bill of Materials pages using
+dynamic column segmentation, horizontal token coalescing, and reference range expansion.
 """
 
 from pathlib import Path
@@ -14,10 +15,11 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 from src.graph.entities import BBox, BOMItem
 from src.layout.gutter_detector import find_column_slices
 from src.layout.token_coalescer import coalesce_adjacent_tokens
+from src.layout.refdes_expander import expand_refdes_token
 
 
 class NaiveBOMParser:
-    """ Naive parser relying on hardcoded horizontal percentage margins."""
+    """ Baseline parser relying on fixed horizontal percentage margins."""
 
     def __init__(self, left_ratio=0.10, right_ratio=0.25):
         """ Initialize parser with empirical margin boundaries.
@@ -70,7 +72,7 @@ class NaiveBOMParser:
         cropped_img, x_offset, _ = self.crop_refdes_column(image)
         img_h, img_w = image.shape[:2]
 
-        print("[INFO] Running naive OCR on cropped column: width=" + str(cropped_img.shape[1]) + ", height=" + str(cropped_img.shape[0]))
+        print("[INFO] Running baseline OCR on cropped column: width=" + str(cropped_img.shape[1]) + ", height=" + str(cropped_img.shape[0]))
 
         raw_detections = ocr_engine.recognize(cropped_img)
         extracted_items = []
@@ -102,11 +104,11 @@ class NaiveBOMParser:
         return extracted_items
 
 
-class DynamicBOMParser:
-    """ BOM parser that dynamically isolates columns before performing OCR."""
+class BOMParser:
+    """ BOM parser that dynamically isolates columns, coalesces split tokens, and expands ranges."""
 
     def __init__(self, min_col_width=150, min_gutter_width=40):
-        """ Initialize dynamic parser configuration.
+        """ Initialize parser configuration.
 
         Args:
           - min_col_width (int) : Minimum pixel width for a candidate column.
@@ -127,7 +129,7 @@ class DynamicBOMParser:
         cleaned = re.sub(r"[\s\.,;:]", "", str(token_text)).upper()
         return bool(self.refdes_pattern.match(cleaned))
 
-    def parse_page_dynamic(self, image, page_number, ocr_engine):
+    def parse_page(self, image, page_number, ocr_engine):
         """ Detect all column slices dynamically and extract RefDes entities across all columns.
 
         Args:
@@ -147,12 +149,15 @@ class DynamicBOMParser:
 
             raw_detections = ocr_engine.recognize(col_crop)
 
-            # Day 5: Merge horizontally split tokens (e.g. 'R' + '101' -> 'R101')
+            # Merge horizontally split tokens caused by wide kerning gaps
             clean_detections = coalesce_adjacent_tokens(raw_detections, max_x_gap=40, max_y_drift=12)
 
             for item in clean_detections:
-                text = str(item.get("text", "")).strip()
-                if not self.is_valid_refdes_token(text):
+                raw_text = str(item.get("text", "")).strip()
+
+                # Expand compressed or grouped designators (e.g. 'R101-105', 'C101, 102')
+                expanded_refs = expand_refdes_token(raw_text)
+                if not expanded_refs:
                     continue
 
                 crop_box = item.get("bbox")
@@ -166,13 +171,25 @@ class DynamicBOMParser:
                 else:
                     bbox = None
 
-                bom_item = BOMItem(
-                    ref_des=text.upper(),
-                    raw_description="",
-                    page_number=page_number,
-                    bbox=bbox,
-                )
-                extracted_items.append(bom_item)
+                for ref in expanded_refs:
+                    if not self.is_valid_refdes_token(ref):
+                        continue
+
+                    bom_item = BOMItem(
+                        ref_des=ref.upper(),
+                        raw_description="",
+                        page_number=page_number,
+                        bbox=bbox,
+                    )
+                    extracted_items.append(bom_item)
 
         print("[INFO] Total items extracted across all columns: " + str(len(extracted_items)))
         return extracted_items
+
+    def parse_page_dynamic(self, image, page_number, ocr_engine):
+        """ Backward compatible alias for parse_page."""
+        return self.parse_page(image, page_number, ocr_engine)
+
+
+# Backward compatibility aliases
+DynamicBOMParser = BOMParser
