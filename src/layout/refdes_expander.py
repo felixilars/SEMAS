@@ -1,9 +1,7 @@
 """
 Reference Designator Range Expander Module
 ==========================================
-Expands compressed, hyphenated, or comma-delimited reference designator groups
-into canonical individual component identifiers (e.g. 'R101-105' into individual
-resistor identifiers from R101 to R105).
+Expands compressed, hyphenated, or comma-delimited reference designator groups into canonical individual component identifiers (e.g. 'R101-105' into individual resistor identifiers from R101 to R105).
 """
 
 from pathlib import Path
@@ -25,7 +23,7 @@ def expand_refdes_token(token_text, default_prefix=None, max_span=50):
     # Clean whitespace and normalize hyphens/tildes to standard ASCII minus
     cleaned = str(token_text).strip().upper()
     cleaned = re.sub(r"[\s]", "", cleaned)
-    cleaned = re.sub(r"[–—~]", "-", cleaned)
+    cleaned = re.sub(r"[\u2013\u2014~]", "-", cleaned)
 
     # Case 1: Comma-delimited sequence, e.g. 'C101, 102, 103' or 'R101-103, 105'
     if "," in cleaned:

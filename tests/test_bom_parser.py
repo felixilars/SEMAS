@@ -1,8 +1,8 @@
 """
 Unit Tests for BOM Parser
 =========================
-Validates margin slicing math, candidate regex filtering, coordinate remapping,
-and full pipeline execution with token coalescing and range expansion.
+Validates candidate regex filtering, whole-page coordinate remapping,
+and full pipeline execution with dynamic gutters, token coalescing, and range expansion.
 """
 
 import sys
@@ -12,7 +12,7 @@ import pytest
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from src.layout.bom_parser import NaiveBOMParser, BOMParser
+from src.layout.bom_parser import BOMParser
 
 
 class MockOCREngine:
@@ -36,21 +36,9 @@ class MockOCREngine:
         return self.mock_results
 
 
-def test_crop_refdes_column_dimensions():
-    """ Verify horizontal percentage slice calculation."""
-    parser = NaiveBOMParser(left_ratio=0.10, right_ratio=0.25)
-    dummy_img = np.zeros((1000, 2000, 3), dtype=np.uint8)
-
-    crop, x1, x2 = parser.crop_refdes_column(dummy_img)
-
-    assert x1 == 200
-    assert x2 == 500
-    assert crop.shape == (1000, 300, 3)
-
-
 def test_is_valid_refdes_token_positives():
     """ Verify accepted electronics reference designators."""
-    parser = NaiveBOMParser()
+    parser = BOMParser()
     assert parser.is_valid_refdes_token("R101") is True
     assert parser.is_valid_refdes_token("C205") is True
     assert parser.is_valid_refdes_token("Q701") is True
@@ -60,7 +48,7 @@ def test_is_valid_refdes_token_positives():
 
 def test_is_valid_refdes_token_negatives():
     """ Verify rejection of non-refdes strings, headers, and descriptions."""
-    parser = NaiveBOMParser()
+    parser = BOMParser()
     assert parser.is_valid_refdes_token("RESISTOR") is False
     assert parser.is_valid_refdes_token("47k") is False
     assert parser.is_valid_refdes_token("5%") is False
@@ -68,10 +56,12 @@ def test_is_valid_refdes_token_negatives():
     assert parser.is_valid_refdes_token("PARTS LIST") is False
 
 
-def test_parse_page_naive_coordinate_remapping():
-    """ Verify that bounding boxes in cropped space map back to whole-page normalized space."""
-    parser = NaiveBOMParser(left_ratio=0.10, right_ratio=0.25)
-    dummy_img = np.zeros((1000, 2000, 3), dtype=np.uint8)
+def test_bom_parser_coordinate_remapping():
+    """ Verify that bounding boxes in column space map back to whole-page normalized space."""
+    parser = BOMParser(min_col_width=100, min_gutter_width=30)
+    # Synthetic image (1000x2000): white page with single text column between x=200 and x=500
+    dummy_img = np.full((1000, 2000, 3), 255, dtype=np.uint8)
+    dummy_img[50:950, 200:500] = 0
 
     mock_detections = [
         {"text": "R102", "bbox": [10, 50, 60, 80], "confidence": 0.95},
@@ -79,7 +69,7 @@ def test_parse_page_naive_coordinate_remapping():
     ]
     mock_engine = MockOCREngine(mock_detections)
 
-    items = parser.parse_page_naive(dummy_img, 6, mock_engine)
+    items = parser.parse_page(dummy_img, 6, mock_engine)
 
     assert len(items) == 1
     item = items[0]
@@ -87,6 +77,11 @@ def test_parse_page_naive_coordinate_remapping():
     assert item.page_number == 6
     assert item.bbox is not None
 
+    # Full page X coordinates (col starts at x=200):
+    # x1 = (200 + 10) / 2000 = 0.105
+    # x2 = (200 + 60) / 2000 = 0.130
+    # y1 = 50 / 1000 = 0.050
+    # y2 = 80 / 1000 = 0.080
     assert round(item.bbox.x1, 3) == 0.105
     assert round(item.bbox.x2, 3) == 0.130
     assert round(item.bbox.y1, 3) == 0.050
@@ -100,7 +95,6 @@ def test_bom_parser_coalesce_and_expand_pipeline():
     # Synthetic image (1000x1000): white page with two text blocks
     # Content col 1: x in [50, 450], Gutter: [450, 550], Content col 2: [550, 950]
     dummy_img = np.full((1000, 1000, 3), 255, dtype=np.uint8)
-    # Ink stripes to create text content
     dummy_img[100:900, 100:400] = 0
     dummy_img[100:900, 600:900] = 0
 
@@ -119,8 +113,6 @@ def test_bom_parser_coalesce_and_expand_pipeline():
     items = parser.parse_page(dummy_img, 1, mock_engine)
     ref_names = [it.ref_des for it in items]
 
-    # Both columns in dummy_img will receive mock_detections
-    # Each column should yield 'R101', 'C201', 'C202', 'C203'
     assert "R101" in ref_names
     assert "C201" in ref_names
     assert "C202" in ref_names
