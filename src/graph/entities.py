@@ -58,7 +58,7 @@ class BBox:
 class BOMItem:
     """ Basic representation of an individual component record in a BOM table."""
 
-    def __init__(self, ref_des, raw_description, page_number, bbox=None):
+    def __init__(self, ref_des, raw_description, page_number, bbox=None, value=None, tolerance=None, part_number=None):
         """ Initialize a single BOM item record.
 
         Args:
@@ -66,11 +66,17 @@ class BOMItem:
           - raw_description (str) : Raw textual specification or description.
           - page_number (int) : 1-based index of the source document page.
           - bbox (BBox or None) : Normalized bounding box if available.
+          - value (str or None) : Electrical rating or value (e.g. '47k', '0.047uF').
+          - tolerance (str or None) : Rating tolerance (e.g. '5%', '+/-10%').
+          - part_number (str or None) : Manufacturer part number or commercial code.
         """
         self.ref_des = str(ref_des).strip().upper()
         self.raw_description = str(raw_description).strip()
         self.page_number = int(page_number)
         self.bbox = bbox
+        self.value = str(value).strip() if value else None
+        self.tolerance = str(tolerance).strip() if tolerance else None
+        self.part_number = str(part_number).strip() if part_number else None
 
     def to_dict(self):
         """ Serialize BOM item to clean dictionary structure."""
@@ -79,4 +85,7 @@ class BOMItem:
             "raw_description": self.raw_description,
             "page_number": self.page_number,
             "bbox": self.bbox.to_dict() if self.bbox else None,
+            "value": self.value,
+            "tolerance": self.tolerance,
+            "part_number": self.part_number,
         }

@@ -44,6 +44,76 @@ def is_spec_unit(token):
         return True
     return False
 
+# Regular expression matching electrical values and ratings
+VALUE_PATTERN = re.compile(
+    r"(\b\d+/\d+\s*W\b|\b\d+(?:\.\d+)?\s*(?:kohm|mohm|ohm|k\s*ohm|k|M\s*ohm|M|uF|pF|nF|mfd|mf|F|VDC|VAC|V|W|mW|Hz|kHz|MHz|[\u03a9\u2126])\b)",
+    re.IGNORECASE,
+)
+
+# Regular expression matching tolerance percentages
+TOLERANCE_PATTERN = re.compile(r"([\u00b1\+\-/]*\s*\d+(?:\.\d+)?\s*%)")
+
+# Regular expression matching manufacturer part numbers and commercial codes
+PART_NUMBER_PATTERN = re.compile(
+    r"\b(2S[A-Z]\d{2,4}[A-Z]?|1S\d{3,4}[A-Z]?|1N\d{3,4}[A-Z]?|STK\d{3,5}[I|V|X]*|[A-Z]{2,4}\d{3,5}[A-Z]?|\d{1,3}-\d{3,4}-\d{2,4}-\d{2})\b",
+    re.IGNORECASE,
+)
+
+# RefDes prefixes to avoid treating circuit identifiers as manufacturer part numbers
+COMMON_REFDES_PREFIXES = ("IC", "TR", "VR", "SW", "JK", "CN", "FL", "RY", "SP", "PL")
+
+
+def is_refdes_like(token):
+    """ Check whether a token resembles a circuit reference designator rather than a commercial part number.
+
+    Args:
+      - token (str) : Candidate token string.
+    Returns: True if token matches common RefDes syntax, False otherwise.
+    """
+    cleaned = str(token).strip().upper()
+    for prefix in COMMON_REFDES_PREFIXES:
+        if cleaned.startswith(prefix):
+            remainder = cleaned[len(prefix):]
+            if re.match(r"^\d{1,4}[A-Z]?$", remainder):
+                return True
+    return False
+
+
+def extract_specification_fields(text, ref_des=None):
+    """ Extract electrical value, tolerance rating, and manufacturer part number from description text.
+
+    Args:
+      - text (str) : Raw text string from BOM description or adjacent columns.
+      - ref_des (str or None) : Optional reference designator to exclude from part number candidates.
+    Returns: Tuple of three strings or None (value, tolerance, part_number).
+    """
+    if not text:
+        return None, None, None
+
+    cleaned = str(text).strip()
+    target_text = cleaned
+    if ref_des:
+        target_text = re.sub(r"\b" + re.escape(str(ref_des)) + r"\b", " ", target_text, flags=re.IGNORECASE).strip()
+
+    # Extract tolerance rating
+    tol_match = TOLERANCE_PATTERN.search(target_text)
+    tolerance = tol_match.group(1).strip() if tol_match else None
+
+    # Extract electrical value (capacitance, resistance, voltage, power)
+    val_match = VALUE_PATTERN.search(target_text)
+    value = val_match.group(1).strip() if val_match else None
+
+    # Extract manufacturer part number or catalog code
+    part_number = None
+    for match in PART_NUMBER_PATTERN.finditer(target_text):
+        candidate = match.group(1).strip()
+        if not is_refdes_like(candidate):
+            part_number = candidate
+            break
+
+    return value, tolerance, part_number
+
+
 class BOMParser:
     """ BOM parser that dynamically isolates columns, coalesces split tokens, and expands ranges."""
 
@@ -123,6 +193,16 @@ class BOMParser:
 
                 # Expand compressed or grouped designators (e.g. 'R101-105', 'C101, 102')
                 expanded_refs = expand_refdes_token(raw_text)
+                valid_refs = [r for r in expanded_refs if self.is_valid_refdes_token(r)]
+                if not valid_refs and " " in raw_text:
+                    parts = raw_text.split()
+                    for split_idx in range(len(parts), 0, -1):
+                        candidate_prefix = " ".join(parts[:split_idx])
+                        candidate_refs = expand_refdes_token(candidate_prefix)
+                        if any(self.is_valid_refdes_token(r) for r in candidate_refs):
+                            expanded_refs = candidate_refs
+                            break
+
                 if not expanded_refs:
                     continue
 
@@ -141,11 +221,16 @@ class BOMParser:
                     if not self.is_valid_refdes_token(ref):
                         continue
 
+                    val, tol, part_no = extract_specification_fields(raw_text, ref)
+
                     bom_item = BOMItem(
                         ref_des=ref.upper(),
-                        raw_description="",
+                        raw_description=raw_text,
                         page_number=page_number,
                         bbox=bbox,
+                        value=val,
+                        tolerance=tol,
+                        part_number=part_no,
                     )
                     extracted_items.append(bom_item)
 

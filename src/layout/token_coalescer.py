@@ -63,9 +63,7 @@ def coalesce_adjacent_tokens(tokens, max_x_gap=40, max_y_drift=12):
         curr_conf = float(curr.get("confidence", 1.0))
 
         # Check internal space: e.g. OCR returned 'R 101' inside a single box
-        if " " in curr_text:
-            collapsed = curr_text.replace(" ", "")
-            curr_text = collapsed
+        curr_text = re.sub(r"^([A-Za-z]{1,3})\s+(\d{1,4}[A-Za-z]?)(?=\s|$)", r"\1\2", curr_text)
 
         # Look ahead to see if the immediate next token is its severed numeric pair
         if i + 1 < len(sorted_tokens):

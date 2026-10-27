@@ -11,9 +11,8 @@ import pytest
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from src.layout.bom_parser import BOMParser, is_spec_unit
+from src.layout.bom_parser import BOMParser, is_spec_unit, extract_specification_fields
 from src.layout.refdes_expander import expand_refdes_token
-
 
 class MockOCREngine:
     """ Mock OCR engine returning pre-defined text boxes for testing."""
@@ -35,7 +34,6 @@ class MockOCREngine:
         """
         return self.mock_results
 
-
 def test_is_valid_refdes_token_positives():
     """ Verify accepted electronics reference designators."""
     parser = BOMParser()
@@ -48,7 +46,6 @@ def test_is_valid_refdes_token_positives():
     assert parser.is_valid_refdes_token("Q101L") is True
     assert parser.is_valid_refdes_token("Q101R") is True
 
-
 def test_is_valid_refdes_token_negatives():
     """ Verify rejection of non-refdes strings, headers, and descriptions."""
     parser = BOMParser()
@@ -57,7 +54,6 @@ def test_is_valid_refdes_token_negatives():
     assert parser.is_valid_refdes_token("5%") is False
     assert parser.is_valid_refdes_token("ELECTROLYTIC") is False
     assert parser.is_valid_refdes_token("PARTS LIST") is False
-
 
 def test_is_spec_unit_detection():
     """ Verify detection of voltage, capacitance, resistance, and power rating strings."""
@@ -84,7 +80,6 @@ def test_is_spec_unit_detection():
     assert is_spec_unit("C205") is False
     assert is_spec_unit("Q701") is False
 
-
 def test_reject_phantom_refdes_tokens():
     """ Verify rejection of phantom designators contaminated with rating units."""
     parser = BOMParser()
@@ -102,7 +97,6 @@ def test_reject_phantom_refdes_tokens():
     # Contaminated with power unit 'W'
     assert parser.is_valid_refdes_token("R1/4W") is False
 
-
 def test_expand_comma_list_ignores_electrical_ratings():
     """ Verify comma-delimited expansion does not inherit prefix onto rating values."""
     # '50V' must NOT become 'C50V'
@@ -112,7 +106,6 @@ def test_expand_comma_list_ignores_electrical_ratings():
     # '1/4W' must NOT become 'R1/4W'
     result_res = expand_refdes_token("R101, 102, 1/4W")
     assert result_res == ["R101", "R102"]
-
 
 def test_bom_parser_coordinate_remapping():
     """ Verify that bounding boxes in column space map back to whole-page normalized space."""
@@ -144,7 +137,6 @@ def test_bom_parser_coordinate_remapping():
     assert round(item.bbox.x2, 3) == 0.130
     assert round(item.bbox.y1, 3) == 0.050
     assert round(item.bbox.y2, 3) == 0.080
-
 
 def test_bom_parser_coalesce_and_expand_pipeline():
     """ Verify BOMParser integrates dynamic gutters, token coalescing, and range expansion."""
@@ -179,3 +171,69 @@ def test_bom_parser_coalesce_and_expand_pipeline():
     assert "C203" in ref_names
     assert "RESISTOR" not in ref_names
     assert "500V" not in ref_names
+
+def test_extract_specification_fields_resistor():
+    """ Verify value and tolerance extraction from resistor description strings."""
+    val, tol, part = extract_specification_fields("Carbon Resistor 47k Ohm 5% 1/4W")
+    assert val is not None
+    assert "47k" in val
+    assert tol == "5%"
+    assert part is None
+
+def test_extract_specification_fields_capacitor():
+    """ Verify capacitance and tolerance extraction from capacitor descriptions."""
+    val, tol, part = extract_specification_fields("Electrolytic 100uF 50V +/-20%")
+    assert val == "100uF"
+    assert tol == "+/-20%"
+    assert part is None
+
+def test_extract_specification_fields_semiconductor():
+    """ Verify transistor and IC part number extraction."""
+    val, tol, part = extract_specification_fields("Silicon Transistor 2SC1815-GR NPN")
+    assert part == "2SC1815"
+
+    val_ic, tol_ic, part_ic = extract_specification_fields("Dual Op-Amp TA7136P SIP-7")
+    assert part_ic == "TA7136P"
+
+def test_extract_specification_fields_catalog_number():
+    """ Verify catalog part number extraction in Sony standard format."""
+    val, tol, part = extract_specification_fields("Part 1-247-065-00 Carbon Film 2.2k 5%")
+    assert part == "1-247-065-00"
+    assert tol == "5%"
+    assert val == "2.2k"
+
+def test_extract_specification_fields_refdes_exclusion():
+    """ Verify that RefDes identifiers are not falsely matched as manufacturer part numbers."""
+    val, tol, part = extract_specification_fields("IC101 TA7136P PRE-AMPLIFIER", ref_des="IC101")
+    assert part == "TA7136P"
+
+def test_extract_specification_fields_empty():
+    """ Verify graceful handling of empty or whitespace text."""
+    val, tol, part = extract_specification_fields("")
+    assert val is None
+    assert tol is None
+    assert part is None
+
+    val_none, tol_none, part_none = extract_specification_fields(None)
+    assert val_none is None
+    assert tol_none is None
+    assert part_none is None
+
+def test_bom_parser_populates_specification_fields():
+    """ Verify that BOMParser populates value, tolerance, and part_number on parsed BOMItem instances."""
+    parser = BOMParser(min_col_width=100, min_gutter_width=30)
+    dummy_img = np.full((1000, 1000, 3), 255, dtype=np.uint8)
+    dummy_img[100:900, 100:800] = 0
+
+    mock_detections = [
+        {"text": "R101 47k 5% 1-247-065-00", "bbox": [20, 100, 300, 130], "confidence": 0.98},
+    ]
+    mock_engine = MockOCREngine(mock_detections)
+
+    items = parser.parse_page(dummy_img, 1, mock_engine)
+    assert len(items) == 1
+    item = items[0]
+    assert item.ref_des == "R101"
+    assert item.value == "47k"
+    assert item.tolerance == "5%"
+    assert item.part_number == "1-247-065-00"

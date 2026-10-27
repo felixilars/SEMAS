@@ -55,3 +55,29 @@ def test_bom_item_serialization():
     assert data["ref_des"] == "R102"
     assert data["page_number"] == 6
     assert data["bbox"]["x1"] == 0.05
+    assert data["value"] is None
+    assert data["tolerance"] is None
+    assert data["part_number"] is None
+
+def test_bom_item_extended_fields_serialization():
+    """ Verify BOMItem initialization and dictionary export with value, tolerance, and part number."""
+    box = BBox(0.05, 0.10, 0.25, 0.15)
+    item = BOMItem(
+        ref_des="R101",
+        raw_description="Carbon Resistor 47k Ohm 5% 1/4W",
+        page_number=6,
+        bbox=box,
+        value="47k",
+        tolerance="5%",
+        part_number="1-247-065-00",
+    )
+
+    assert item.ref_des == "R101"
+    assert item.value == "47k"
+    assert item.tolerance == "5%"
+    assert item.part_number == "1-247-065-00"
+
+    data = item.to_dict()
+    assert data["value"] == "47k"
+    assert data["tolerance"] == "5%"
+    assert data["part_number"] == "1-247-065-00"
