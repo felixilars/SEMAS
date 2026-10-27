@@ -1,8 +1,7 @@
 """
 Unit Tests for BOM Parser
 =========================
-Validates candidate regex filtering, whole-page coordinate remapping,
-and full pipeline execution with dynamic gutters, token coalescing, and range expansion.
+Validates candidate regex filtering, whole-page coordinate remapping, phantom designator rejection, and full pipeline execution with dynamic gutters, token coalescing, and range expansion.
 """
 
 import sys
@@ -12,7 +11,8 @@ import pytest
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from src.layout.bom_parser import BOMParser
+from src.layout.bom_parser import BOMParser, is_spec_unit
+from src.layout.refdes_expander import expand_refdes_token
 
 
 class MockOCREngine:
@@ -44,6 +44,9 @@ def test_is_valid_refdes_token_positives():
     assert parser.is_valid_refdes_token("Q701") is True
     assert parser.is_valid_refdes_token("IC01") is True
     assert parser.is_valid_refdes_token("R101A") is True
+    assert parser.is_valid_refdes_token("C205B") is True
+    assert parser.is_valid_refdes_token("Q101L") is True
+    assert parser.is_valid_refdes_token("Q101R") is True
 
 
 def test_is_valid_refdes_token_negatives():
@@ -54,6 +57,61 @@ def test_is_valid_refdes_token_negatives():
     assert parser.is_valid_refdes_token("5%") is False
     assert parser.is_valid_refdes_token("ELECTROLYTIC") is False
     assert parser.is_valid_refdes_token("PARTS LIST") is False
+
+
+def test_is_spec_unit_detection():
+    """ Verify detection of voltage, capacitance, resistance, and power rating strings."""
+    # Voltage ratings
+    assert is_spec_unit("500V") is True
+    assert is_spec_unit("250V") is True
+    assert is_spec_unit("50V") is True
+    assert is_spec_unit("12VDC") is True
+
+    # Resistance and capacitance
+    assert is_spec_unit("47k") is True
+    assert is_spec_unit("100kohm") is True
+    assert is_spec_unit("100uF") is True
+    assert is_spec_unit("0.01uF") is True
+    assert is_spec_unit("220pF") is True
+
+    # Power and tolerance
+    assert is_spec_unit("1/4W") is True
+    assert is_spec_unit("1/2W") is True
+    assert is_spec_unit("5%") is True
+
+    # Legitimate RefDes must NOT be flagged as spec units
+    assert is_spec_unit("R101") is False
+    assert is_spec_unit("C205") is False
+    assert is_spec_unit("Q701") is False
+
+
+def test_reject_phantom_refdes_tokens():
+    """ Verify rejection of phantom designators contaminated with rating units."""
+    parser = BOMParser()
+
+    # Contaminated with voltage unit 'V'
+    assert parser.is_valid_refdes_token("R500V") is False
+    assert parser.is_valid_refdes_token("R250V") is False
+    assert parser.is_valid_refdes_token("C50V") is False
+
+    # Contaminated with resistance/capacitance unit 'K', 'M', 'U'
+    assert parser.is_valid_refdes_token("R10K") is False
+    assert parser.is_valid_refdes_token("R47K") is False
+    assert parser.is_valid_refdes_token("C100UF") is False
+
+    # Contaminated with power unit 'W'
+    assert parser.is_valid_refdes_token("R1/4W") is False
+
+
+def test_expand_comma_list_ignores_electrical_ratings():
+    """ Verify comma-delimited expansion does not inherit prefix onto rating values."""
+    # '50V' must NOT become 'C50V'
+    result_cap = expand_refdes_token("C101, 102, 50V")
+    assert result_cap == ["C101", "C102"]
+
+    # '1/4W' must NOT become 'R1/4W'
+    result_res = expand_refdes_token("R101, 102, 1/4W")
+    assert result_res == ["R101", "R102"]
 
 
 def test_bom_parser_coordinate_remapping():
@@ -102,11 +160,13 @@ def test_bom_parser_coalesce_and_expand_pipeline():
     # 1. Split token: 'R' + '101' -> should coalesce into 'R101'
     # 2. Range token: 'C201-203' -> should expand into 'C201', 'C202', 'C203'
     # 3. Non-refdes token: 'RESISTOR' -> should be filtered out
+    # 4. Rating unit: '500V' -> should be filtered out
     mock_detections = [
         {"text": "R", "bbox": [20, 100, 40, 130], "confidence": 0.99},
         {"text": "101", "bbox": [45, 100, 90, 130], "confidence": 0.98},
         {"text": "C201-203", "bbox": [20, 200, 120, 230], "confidence": 0.95},
         {"text": "RESISTOR", "bbox": [150, 100, 300, 130], "confidence": 0.90},
+        {"text": "500V", "bbox": [20, 300, 80, 330], "confidence": 0.92},
     ]
     mock_engine = MockOCREngine(mock_detections)
 
@@ -118,3 +178,4 @@ def test_bom_parser_coalesce_and_expand_pipeline():
     assert "C202" in ref_names
     assert "C203" in ref_names
     assert "RESISTOR" not in ref_names
+    assert "500V" not in ref_names

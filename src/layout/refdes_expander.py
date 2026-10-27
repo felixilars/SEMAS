@@ -36,6 +36,12 @@ def expand_refdes_token(token_text, default_prefix=None, max_span=50):
             if not part:
                 continue
 
+            # Do not inherit prefix if part represents an electrical rating value (e.g. '50V', '250V', '1/4W')
+            if re.search(r"^\d+(?:\.\d+)?\s*(?:VDC|VAC|V|UF|PF|NF|MFD|MF|F|KOHM|MOHM|OHM|K|M|W|MW|HZ|%|DB)$", part, re.IGNORECASE):
+                continue
+            if re.search(r"^\d+/\d+\s*W$", part, re.IGNORECASE):
+                continue
+
             sub_items = expand_refdes_token(part, default_prefix=active_prefix, max_span=max_span)
             if sub_items:
                 # Update active prefix if any expanded sub-item starts with letters

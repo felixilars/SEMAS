@@ -1,8 +1,7 @@
 """
 BOM Table Parser Module
 =======================
-Extracts electronic component references from tabular Bill of Materials pages using
-dynamic column segmentation, horizontal token coalescing, and reference range expansion.
+Extracts electronic component references from tabular Bill of Materials pages using dynamic column segmentation, horizontal token coalescing, and reference range expansion.
 """
 
 from pathlib import Path
@@ -17,9 +16,40 @@ from src.layout.gutter_detector import find_column_slices
 from src.layout.token_coalescer import coalesce_adjacent_tokens
 from src.layout.refdes_expander import expand_refdes_token
 
+# Regular expression identifying standard electrical rating units and values
+SPEC_UNIT_PATTERN = re.compile(
+    r"^\d+(?:\.\d+)?\s*(?:VDC|VAC|V|UF|PF|NF|MFD|MF|F|KOHM|MOHM|OHM|K|M|W|MW|HZ|KHZ|MHZ|%|DB)$",
+    re.IGNORECASE,
+)
+
+# Fraction wattage ratings, e.g. '1/4W', '1/2W', '1/8W'
+FRACTION_WATT_PATTERN = re.compile(r"^\d+/\d+\s*W$", re.IGNORECASE)
+
+# Prohibited suffix characters that represent electrical units rather than circuit channel or revision letters
+UNIT_SUFFIX_CHARS = ("V", "K", "M", "W", "F", "H")
+
+def is_spec_unit(token):
+    """ Check whether a candidate token represents an electrical technical specification.
+
+    Args:
+      - token (str) : Candidate text string from OCR.
+    Returns: True if token matches an electrical specification or rating, False otherwise.
+    """
+    if not token:
+        return False
+    cleaned = str(token).strip()
+    if bool(SPEC_UNIT_PATTERN.match(cleaned)):
+        return True
+    if bool(FRACTION_WATT_PATTERN.match(cleaned)):
+        return True
+    return False
 
 class BOMParser:
     """ BOM parser that dynamically isolates columns, coalesces split tokens, and expands ranges."""
+
+    # Standard component circuit sub-indices and audio channel suffixes
+    # (e.g. 'A', 'B', 'C', 'D' for multi-gate ICs; 'L', 'R' for stereo left/right channels)
+    VALID_CIRCUIT_SUFFIXES = ("A", "B", "C", "D", "L", "R")
 
     def __init__(self, min_col_width=150, min_gutter_width=40):
         """ Initialize parser configuration.
@@ -31,17 +61,39 @@ class BOMParser:
         """
         self.min_col_width = int(min_col_width)
         self.min_gutter_width = int(min_gutter_width)
-        self.refdes_pattern = re.compile(r"^([A-Z]{1,3}\d{1,4}[A-Z]?)$", re.IGNORECASE)
+        self.refdes_pattern = re.compile(r"^([A-Z]{1,3}\d{1,4})([A-Z])?$", re.IGNORECASE)
 
     def is_valid_refdes_token(self, token_text):
-        """ Validate electronic reference designator token syntax.
+        """ Validate electronic reference designator token syntax and reject rating units.
 
         Args:
           - token_text (str) : Candidate text string.
         Returns: True if valid RefDes token, False otherwise.
         """
+        if not token_text:
+            return False
+
         cleaned = re.sub(r"[\s\.,;:]", "", str(token_text)).upper()
-        return bool(self.refdes_pattern.match(cleaned))
+
+        # 1. Reject pure electrical specification units (e.g. '500V', '47K', '100UF', '1/4W')
+        if is_spec_unit(cleaned):
+            return False
+
+        # 2. Reject phantom designators terminating in electrical units (e.g. 'R500V', 'C50V', 'R10K')
+        if any(cleaned.endswith(unit) for unit in UNIT_SUFFIX_CHARS):
+            return False
+
+        # 3. Match base reference designator pattern
+        match = self.refdes_pattern.match(cleaned)
+        if not match:
+            return False
+
+        # 4. If an optional sub-unit letter suffix is present, validate against allowed suffixes
+        suffix = match.group(2)
+        if suffix and suffix.upper() not in self.VALID_CIRCUIT_SUFFIXES:
+            return False
+
+        return True
 
     def parse_page(self, image, page_number, ocr_engine):
         """ Detect all column slices dynamically and extract RefDes entities across all columns.

@@ -17,7 +17,6 @@ from src.layout.token_coalescer import (
     coalesce_adjacent_tokens,
 )
 
-
 def test_prefix_and_numeric_validation():
     """ Verify detection of isolated prefixes and numeric indices."""
     assert is_prefix_token("R") is True
@@ -29,7 +28,6 @@ def test_prefix_and_numeric_validation():
     assert is_numeric_index_token("101") is True
     assert is_numeric_index_token("205A") is True
     assert is_numeric_index_token("47k") is False
-
 
 def test_coalesce_adjacent_tokens_success():
     """ Verify severed 'R' and '113' tokens merge into single 'R113' token."""
@@ -47,7 +45,6 @@ def test_coalesce_adjacent_tokens_success():
     assert merged["bbox"] == [10, 100, 65, 120]
     assert round(merged["confidence"], 2) == 0.96
 
-
 def test_coalesce_does_not_merge_when_gap_too_large():
     """ Verify tokens do not merge if horizontal gap exceeds max_x_gap."""
     raw_boxes = [
@@ -60,7 +57,6 @@ def test_coalesce_does_not_merge_when_gap_too_large():
     assert len(coalesced) == 2
     assert coalesced[0]["text"] == "R"
     assert coalesced[1]["text"] == "113"
-
 
 def test_coalesce_internal_space_normalization():
     """ Verify 'R 102' within a single box is collapsed to 'R102'."""

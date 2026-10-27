@@ -18,7 +18,6 @@ from src.layout.gutter_detector import (
     find_column_slices,
 )
 
-
 def test_vertical_projection_synthetic_stripes():
     """ Verify projection histogram peaks over vertical dark stripes."""
     canvas = np.full((500, 1000), 255, dtype=np.uint8)
@@ -31,7 +30,6 @@ def test_vertical_projection_synthetic_stripes():
     assert proj[600] == 0
     assert proj[300] == 500 * 255
 
-
 def test_detect_vertical_gutters_multi_column():
     """ Verify detection of whitespace gutters separating two text blocks."""
     canvas = np.full((500, 1000), 255, dtype=np.uint8)
@@ -43,7 +41,6 @@ def test_detect_vertical_gutters_multi_column():
     assert len(gutters) >= 2
     middle_gutter_found = any(g[0] <= 450 and g[1] >= 550 for g in gutters)
     assert middle_gutter_found is True
-
 
 def test_find_column_slices_isolates_both_columns():
     """ Verify find_column_slices returns separate content slices for columns."""
