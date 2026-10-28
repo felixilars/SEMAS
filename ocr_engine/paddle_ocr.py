@@ -1,11 +1,7 @@
 """
 PaddleOCR Engine Wrapper
 ========================
-High-precision OCR integration using PaddleOCR (PP-OCRv4 / PP-OCRv6 with Text Angle Classification).
-Compatible with both PaddlePaddle 2.x and 3.x.
-"""
-
-from __future__ import annotations
+High-precision OCR integration using PaddleOCR (PP-OCRv4 / PP-OCRv6 with Text Angle Classification)"""
 
 import logging
 import os
@@ -20,7 +16,6 @@ os.environ.setdefault("PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK", "True")
 from .base import BaseOCREngine
 
 logger = logging.getLogger("PaddleOCREngine")
-
 class PaddleOCREngine(BaseOCREngine):
     """ PaddleOCR Engine wrapper with angle classification support."""
 

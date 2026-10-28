@@ -1,15 +1,11 @@
 """
 OCR Post-Correction and Lexicon Cross-Matching Engine
 ======================================================
-Resolves raw OCR noisy tokens against dynamic manual lexicons (D_BOM)
-using weighted Levenshtein distance with optical confusion penalties
+Resolves raw OCR noisy tokens against dynamic manual lexicons (D_BOM) using weighted Levenshtein distance with optical confusion penalties
 and a 3-tier Human-in-the-Loop (HITL) triage system.
 """
 
-from __future__ import annotations
-
 import re
-
 
 OPTICAL_CONFUSION_COSTS = {
     # Extreme optical confusion pairs (cost = 0.15)
@@ -37,7 +33,6 @@ OPTICAL_CONFUSION_COSTS = {
 
 # Recognized multi-letter component prefixes
 MULTI_LETTER_PREFIXES = ("IC", "VR", "RV", "TR", "ZD", "SW", "PL", "CN", "TP", "CR", "FS", "TH")
-
 
 def split_refdes_and_spec(raw_text):
     """ Separate attached electrical spec or value from reference designator.
@@ -73,7 +68,6 @@ def split_refdes_and_spec(raw_text):
     spec_value = " ".join(tokens[1:]).strip()
     return refdes, (spec_value if spec_value else None)
 
-
 def extract_prefix(refdes_token):
     """ Extract canonical component family prefix from reference designator.
 
@@ -94,7 +88,6 @@ def extract_prefix(refdes_token):
         if char.isalpha():
             return char
     return ""
-
 
 def compute_weighted_levenshtein(s1, s2):
     """ Compute weighted edit distance with optical confusion penalties.
@@ -145,7 +138,6 @@ def compute_weighted_levenshtein(s1, s2):
 
     return base_dist
 
-
 class CorrectionResult:
     """ Container for reference designator post-correction outcome."""
 
@@ -188,7 +180,6 @@ class CorrectionResult:
             "confidence": round(self.confidence, 3),
             "candidates": [(cand[0], round(cand[1], 3)) for cand in self.candidates],
         }
-
 
 class PostCorrector:
     """ Resolves OCR text against dynamic manual lexicons with 3-tier HITL triage."""

@@ -1,12 +1,8 @@
 """
 Orthogonal Text Rotation & Multi-Angle Recognition Module
 ==========================================================
-Recognizes component labels across 4 orthogonal rotation angles (0, 90, 180, 270 deg)
-using semantic candidate scoring to recover vertical and inverted text without
-noise regression or aspect-ratio heuristics.
+Recognizes component labels across 4 orthogonal rotation angles (0, 90, 180, 270 deg) using semantic candidate scoring to recover vertical and inverted text without noise regression or aspect-ratio heuristics.
 """
-
-from __future__ import annotations
 
 import re
 import cv2
@@ -21,7 +17,6 @@ ORTHOGONAL_ROTATION_STEPS = [
     (270, cv2.ROTATE_90_COUNTERCLOCKWISE),
     (180, cv2.ROTATE_180),
 ]
-
 
 def score_ocr_candidate(text, conf, lexicon):
     """ Compute semantic quality score for an OCR candidate text.
@@ -60,7 +55,6 @@ def score_ocr_candidate(text, conf, lexicon):
         return 0.2 + 0.1 * float(conf)
 
     return 0.0
-
 
 def read_text_with_orthogonal_rotations(crop_img, ocr_model, lexicon=None, conf_thresh=0.75):
     """ Recognize text across orthogonal angles (0, 90, 180, 270 deg) with semantic ranking.

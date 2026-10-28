@@ -1,8 +1,7 @@
-from __future__ import annotations
 from pathlib import Path
 
 # Short document names
-DEVICE_SHORT_NAMES: dict[str, str] = {
+DEVICE_SHORT_NAMES = {
     "Acoustic_Control_450_Lead_Bass_Guitar_Amplifier_Service Manual_1974": "Acoustic_450",
     "Akai_AM-M630_AM-M830_Digital_Integrated_Amplifier_Service_Manual": "Akai_AM_M630_M830",
     "HP 5261A Video Amplifier 05261-9011 Sep. 1972": "HP_5261A",
@@ -17,7 +16,7 @@ DEVICE_SHORT_NAMES: dict[str, str] = {
 }
 
 # 1-based display page numbers
-MANUALS_PAGES: dict[str, dict[str, list[int]]] = {
+MANUALS_PAGES = {
     "Acoustic_Control_450_Lead_Bass_Guitar_Amplifier_Service Manual_1974": {
         "bom": [14,15,16,17],
         "schematic": [6,7,8,9,10],
@@ -76,7 +75,6 @@ MANUALS_PAGES: dict[str, dict[str, list[int]]] = {
 }
 
 CATEGORIES = ["bom", "schematic", "pcb"]
-
 
 def create_directory_structure(output_base_dir, manuals_dict):
     """ Create folder hierarchy for manual pages.
@@ -172,7 +170,7 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
         doc.close()
 
 def main():
-    """ Run page extraction across all configured service manuals """
+    """ Run page extraction across all configured service manuals."""
     # Resolve paths
     base_dir = Path(__file__).resolve().parent.parent
     raw_manuals_dir = base_dir / "data" / "raw_manuals"

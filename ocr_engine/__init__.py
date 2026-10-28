@@ -1,11 +1,8 @@
 """
 OCR Engine Package
 ==================
-Modular OCR integration library for electronic service manual recognition.
-Provides PaddleOCREngine and the factory function `get_ocr_engine`.
+Modular OCR integration library for electronic service manual recognition. Provides PaddleOCREngine and the factory function `get_ocr_engine`.
 """
-
-from __future__ import annotations
 
 from .base import BaseOCREngine
 from .paddle_ocr import PaddleOCREngine
@@ -59,6 +56,7 @@ from .rotations import (
     read_text_with_orthogonal_rotations,
     score_ocr_candidate,
 )
+from .schematic_extractor import SchematicOCRExtractor
 
 __all__ = [
     "BaseOCREngine",
@@ -71,4 +69,5 @@ __all__ = [
     "compute_weighted_levenshtein",
     "read_text_with_orthogonal_rotations",
     "score_ocr_candidate",
+    "SchematicOCRExtractor",
 ]

@@ -201,6 +201,16 @@ class BOMTableParser:
 
             # Expand compressed or grouped designators (e.g. 'R101-105', 'C101, 102')
             expanded_refs = expand_refdes_token(raw_text)
+            valid_refs = [r for r in expanded_refs if self.is_valid_refdes_token(r)]
+            if not valid_refs and " " in raw_text:
+                parts = raw_text.split()
+                for split_idx in range(len(parts), 0, -1):
+                    candidate_prefix = " ".join(parts[:split_idx])
+                    candidate_refs = expand_refdes_token(candidate_prefix)
+                    if any(self.is_valid_refdes_token(r) for r in candidate_refs):
+                        expanded_refs = candidate_refs
+                        break
+
             if not expanded_refs:
                 continue
 
