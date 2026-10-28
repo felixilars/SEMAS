@@ -1,6 +1,6 @@
 # SEMAS (Service Electronic Manual Analysis System)
 
-> **Étude Pratique 2026-2027 — INSA Rennes**
+> **Étude Pratique 2026-2027 (INSA Rennes)**
 
 ## Équipe de projet (Team Members)
 
