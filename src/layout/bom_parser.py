@@ -4,12 +4,8 @@ BOM Table Parser Module
 Extracts electronic component references from tabular Bill of Materials pages using dynamic column segmentation, horizontal token coalescing, and reference range expansion.
 """
 
-from pathlib import Path
 import re
-import sys
 import numpy as np
-
-sys.path.append(str(Path(__file__).parent.parent.parent))
 
 from src.graph.entities import BBox, BOMItem
 from src.layout.gutter_detector import find_column_slices

@@ -13,6 +13,7 @@ DEVICE_SHORT_NAMES = {
     "jbl_ms-a1004_rev1_car_amplifier_sm": "JBL_MS_A1004",
     "manualsplus_08649": "TEAC_AR_250SFM",
     "manualsplus_13963": "McIntosh_MC_2100",
+    "LAB Series L6 Service Manual": "LAB_Series_L6",
 }
 
 # 1-based display page numbers
@@ -71,6 +72,11 @@ MANUALS_PAGES = {
         "bom": [10],
         "schematic": [7,8],
         "pcb": [6,8]
+    },
+    "LAB Series L6 Service Manual": {
+        "bom": [11, 12, 13, 14],
+        "schematic": [1, 2, 3],
+        "pcb": [4, 5, 6],
     },
 }
 
@@ -172,7 +178,7 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
 def main():
     """ Run page extraction across all configured service manuals."""
     # Resolve paths
-    base_dir = Path(__file__).resolve().parent.parent
+    base_dir = Path(__file__).resolve().parent.parent.parent
     raw_manuals_dir = base_dir / "data" / "raw_manuals"
     output_base_dir = base_dir / "data" / "extracted_manuals"
 
