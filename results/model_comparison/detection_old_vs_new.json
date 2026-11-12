@@ -11,7 +11,7 @@
     "slice_nms_iou": 0.4,
     "latency_repeats": 3,
     "device": "NVIDIA GeForce RTX 4080 Laptop GPU",
-    "torch_version": "2.14.1+cu130",
+    "torch_version": "2.14.0+cu130",
     "models": {
       "old": "weights/best_composants.pt",
       "new": "runs/detect/semas_yolo26m_exp/weights/best.pt"
@@ -27,7 +27,7 @@
       "precision": 0.3033,
       "recall": 0.7109,
       "f1": 0.4252,
-      "mean_iou": 0.4715,
+      "mean_iou": 0.4698,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -36,18 +36,18 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 21.9
+      "latency_ms": 19.5
     },
     {
       "total_gt": 128,
       "total_preds": 300,
-      "tp": 34,
-      "fp": 266,
-      "fn": 94,
-      "precision": 0.1133,
-      "recall": 0.2656,
-      "f1": 0.1589,
-      "mean_iou": 0.5661,
+      "tp": 32,
+      "fp": 268,
+      "fn": 96,
+      "precision": 0.1067,
+      "recall": 0.25,
+      "f1": 0.1495,
+      "mean_iou": 0.5679,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -56,7 +56,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 21.9
+      "latency_ms": 19.5
     },
     {
       "total_gt": 128,
@@ -67,7 +67,7 @@
       "precision": 0.1724,
       "recall": 0.5078,
       "f1": 0.2574,
-      "mean_iou": 0.4277,
+      "mean_iou": 0.4282,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -76,7 +76,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 495.6
+      "latency_ms": 480.0
     },
     {
       "total_gt": 128,
@@ -87,7 +87,7 @@
       "precision": 0.0345,
       "recall": 0.1016,
       "f1": 0.0515,
-      "mean_iou": 0.567,
+      "mean_iou": 0.5676,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -96,7 +96,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 495.6
+      "latency_ms": 480.0
     },
     {
       "total_gt": 128,
@@ -107,7 +107,7 @@
       "precision": 0.7111,
       "recall": 0.75,
       "f1": 0.73,
-      "mean_iou": 0.7712,
+      "mean_iou": 0.7686,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -116,7 +116,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 37.1
+      "latency_ms": 30.4
     },
     {
       "total_gt": 128,
@@ -127,7 +127,7 @@
       "precision": 0.6889,
       "recall": 0.7266,
       "f1": 0.7072,
-      "mean_iou": 0.7827,
+      "mean_iou": 0.7801,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -136,7 +136,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 37.1
+      "latency_ms": 30.4
     },
     {
       "total_gt": 128,
@@ -147,7 +147,7 @@
       "precision": 0.6644,
       "recall": 0.7578,
       "f1": 0.708,
-      "mean_iou": 0.7735,
+      "mean_iou": 0.7711,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -156,7 +156,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 1601.7
+      "latency_ms": 1220.9
     },
     {
       "total_gt": 128,
@@ -167,7 +167,7 @@
       "precision": 0.6438,
       "recall": 0.7344,
       "f1": 0.6861,
-      "mean_iou": 0.7849,
+      "mean_iou": 0.7825,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -176,7 +176,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 1601.7
+      "latency_ms": 1220.9
     },
     {
       "total_gt": 128,
@@ -187,7 +187,7 @@
       "precision": 0.3033,
       "recall": 0.7109,
       "f1": 0.4252,
-      "mean_iou": 0.4715,
+      "mean_iou": 0.4698,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -196,18 +196,18 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 20.5
+      "latency_ms": 19.7
     },
     {
       "total_gt": 128,
       "total_preds": 300,
-      "tp": 34,
-      "fp": 266,
-      "fn": 94,
-      "precision": 0.1133,
-      "recall": 0.2656,
-      "f1": 0.1589,
-      "mean_iou": 0.5661,
+      "tp": 32,
+      "fp": 268,
+      "fn": 96,
+      "precision": 0.1067,
+      "recall": 0.25,
+      "f1": 0.1495,
+      "mean_iou": 0.5679,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -216,7 +216,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 20.5
+      "latency_ms": 19.7
     },
     {
       "total_gt": 128,
@@ -227,7 +227,7 @@
       "precision": 0.1724,
       "recall": 0.5078,
       "f1": 0.2574,
-      "mean_iou": 0.4277,
+      "mean_iou": 0.4282,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -236,7 +236,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 443.5
+      "latency_ms": 406.2
     },
     {
       "total_gt": 128,
@@ -247,7 +247,7 @@
       "precision": 0.0345,
       "recall": 0.1016,
       "f1": 0.0515,
-      "mean_iou": 0.567,
+      "mean_iou": 0.5676,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -256,7 +256,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 443.5
+      "latency_ms": 406.2
     },
     {
       "total_gt": 128,
@@ -267,7 +267,7 @@
       "precision": 0.7111,
       "recall": 0.75,
       "f1": 0.73,
-      "mean_iou": 0.7712,
+      "mean_iou": 0.7686,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -276,7 +276,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 32.6
+      "latency_ms": 25.9
     },
     {
       "total_gt": 128,
@@ -287,7 +287,7 @@
       "precision": 0.6889,
       "recall": 0.7266,
       "f1": 0.7072,
-      "mean_iou": 0.7827,
+      "mean_iou": 0.7801,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -296,7 +296,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 32.6
+      "latency_ms": 25.9
     },
     {
       "total_gt": 128,
@@ -307,7 +307,7 @@
       "precision": 0.6644,
       "recall": 0.7578,
       "f1": 0.708,
-      "mean_iou": 0.7735,
+      "mean_iou": 0.7711,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -316,7 +316,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 1528.9
+      "latency_ms": 1242.4
     },
     {
       "total_gt": 128,
@@ -327,7 +327,7 @@
       "precision": 0.6438,
       "recall": 0.7344,
       "f1": 0.6861,
-      "mean_iou": 0.7849,
+      "mean_iou": 0.7825,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 5,
@@ -336,7 +336,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 1528.9
+      "latency_ms": 1242.4
     },
     {
       "total_gt": 146,
@@ -347,7 +347,7 @@
       "precision": 0.355,
       "recall": 0.637,
       "f1": 0.4559,
-      "mean_iou": 0.481,
+      "mean_iou": 0.4805,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -356,7 +356,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 19.0
+      "latency_ms": 15.5
     },
     {
       "total_gt": 146,
@@ -367,7 +367,7 @@
       "precision": 0.1183,
       "recall": 0.2123,
       "f1": 0.152,
-      "mean_iou": 0.6365,
+      "mean_iou": 0.6353,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -376,18 +376,18 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 19.0
+      "latency_ms": 15.5
     },
     {
       "total_gt": 146,
       "total_preds": 736,
-      "tp": 58,
-      "fp": 678,
-      "fn": 88,
-      "precision": 0.0788,
-      "recall": 0.3973,
-      "f1": 0.1315,
-      "mean_iou": 0.4686,
+      "tp": 57,
+      "fp": 679,
+      "fn": 89,
+      "precision": 0.0774,
+      "recall": 0.3904,
+      "f1": 0.1293,
+      "mean_iou": 0.4709,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -396,18 +396,18 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 455.4
+      "latency_ms": 404.1
     },
     {
       "total_gt": 146,
       "total_preds": 736,
-      "tp": 23,
-      "fp": 713,
-      "fn": 123,
-      "precision": 0.0312,
-      "recall": 0.1575,
-      "f1": 0.0522,
-      "mean_iou": 0.5935,
+      "tp": 22,
+      "fp": 714,
+      "fn": 124,
+      "precision": 0.0299,
+      "recall": 0.1507,
+      "f1": 0.0499,
+      "mean_iou": 0.5972,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -416,7 +416,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 455.4
+      "latency_ms": 404.1
     },
     {
       "total_gt": 146,
@@ -427,7 +427,7 @@
       "precision": 0.6824,
       "recall": 0.6918,
       "f1": 0.6871,
-      "mean_iou": 0.7329,
+      "mean_iou": 0.7323,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -436,7 +436,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 35.5
+      "latency_ms": 25.4
     },
     {
       "total_gt": 146,
@@ -447,7 +447,7 @@
       "precision": 0.6284,
       "recall": 0.637,
       "f1": 0.6327,
-      "mean_iou": 0.7576,
+      "mean_iou": 0.7569,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -456,7 +456,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 35.5
+      "latency_ms": 25.4
     },
     {
       "total_gt": 146,
@@ -467,7 +467,7 @@
       "precision": 0.6235,
       "recall": 0.726,
       "f1": 0.6709,
-      "mean_iou": 0.7428,
+      "mean_iou": 0.7423,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -476,7 +476,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 1537.9
+      "latency_ms": 1211.3
     },
     {
       "total_gt": 146,
@@ -487,7 +487,7 @@
       "precision": 0.5824,
       "recall": 0.6781,
       "f1": 0.6266,
-      "mean_iou": 0.764,
+      "mean_iou": 0.7634,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -496,7 +496,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 1537.9
+      "latency_ms": 1211.3
     },
     {
       "total_gt": 146,
@@ -507,7 +507,7 @@
       "precision": 0.355,
       "recall": 0.637,
       "f1": 0.4559,
-      "mean_iou": 0.481,
+      "mean_iou": 0.4805,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -516,7 +516,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 18.9
+      "latency_ms": 15.4
     },
     {
       "total_gt": 146,
@@ -527,7 +527,7 @@
       "precision": 0.1183,
       "recall": 0.2123,
       "f1": 0.152,
-      "mean_iou": 0.6365,
+      "mean_iou": 0.6353,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -536,18 +536,18 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 18.9
+      "latency_ms": 15.4
     },
     {
       "total_gt": 146,
       "total_preds": 736,
-      "tp": 58,
-      "fp": 678,
-      "fn": 88,
-      "precision": 0.0788,
-      "recall": 0.3973,
-      "f1": 0.1315,
-      "mean_iou": 0.4686,
+      "tp": 57,
+      "fp": 679,
+      "fn": 89,
+      "precision": 0.0774,
+      "recall": 0.3904,
+      "f1": 0.1293,
+      "mean_iou": 0.4709,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -556,18 +556,18 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 510.6
+      "latency_ms": 433.7
     },
     {
       "total_gt": 146,
       "total_preds": 736,
-      "tp": 23,
-      "fp": 713,
-      "fn": 123,
-      "precision": 0.0312,
-      "recall": 0.1575,
-      "f1": 0.0522,
-      "mean_iou": 0.5935,
+      "tp": 22,
+      "fp": 714,
+      "fn": 124,
+      "precision": 0.0299,
+      "recall": 0.1507,
+      "f1": 0.0499,
+      "mean_iou": 0.5972,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -576,7 +576,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 510.6
+      "latency_ms": 433.7
     },
     {
       "total_gt": 146,
@@ -587,7 +587,7 @@
       "precision": 0.6824,
       "recall": 0.6918,
       "f1": 0.6871,
-      "mean_iou": 0.7329,
+      "mean_iou": 0.7323,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -596,7 +596,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 33.8
+      "latency_ms": 24.8
     },
     {
       "total_gt": 146,
@@ -607,7 +607,7 @@
       "precision": 0.6284,
       "recall": 0.637,
       "f1": 0.6327,
-      "mean_iou": 0.7576,
+      "mean_iou": 0.7569,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -616,7 +616,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 33.8
+      "latency_ms": 24.8
     },
     {
       "total_gt": 146,
@@ -627,7 +627,7 @@
       "precision": 0.6235,
       "recall": 0.726,
       "f1": 0.6709,
-      "mean_iou": 0.7428,
+      "mean_iou": 0.7423,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -636,7 +636,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 1489.6
+      "latency_ms": 1222.0
     },
     {
       "total_gt": 146,
@@ -647,7 +647,7 @@
       "precision": 0.5824,
       "recall": 0.6781,
       "f1": 0.6266,
-      "mean_iou": 0.764,
+      "mean_iou": 0.7634,
       "manual_id": "Toshiba_SY_330",
       "split": "dev",
       "page": 6,
@@ -656,18 +656,18 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 1489.6
+      "latency_ms": 1222.0
     },
     {
       "total_gt": 74,
       "total_preds": 100,
-      "tp": 55,
-      "fp": 45,
-      "fn": 19,
-      "precision": 0.55,
-      "recall": 0.7432,
-      "f1": 0.6322,
-      "mean_iou": 0.4262,
+      "tp": 56,
+      "fp": 44,
+      "fn": 18,
+      "precision": 0.56,
+      "recall": 0.7568,
+      "f1": 0.6437,
+      "mean_iou": 0.4245,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -676,7 +676,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 12.5
+      "latency_ms": 10.1
     },
     {
       "total_gt": 74,
@@ -687,7 +687,7 @@
       "precision": 0.12,
       "recall": 0.1622,
       "f1": 0.1379,
-      "mean_iou": 0.5709,
+      "mean_iou": 0.5726,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -696,7 +696,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 12.5
+      "latency_ms": 10.1
     },
     {
       "total_gt": 74,
@@ -707,7 +707,7 @@
       "precision": 0.3774,
       "recall": 0.8108,
       "f1": 0.515,
-      "mean_iou": 0.4596,
+      "mean_iou": 0.4597,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -716,7 +716,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 163.0
+      "latency_ms": 131.1
     },
     {
       "total_gt": 74,
@@ -727,7 +727,7 @@
       "precision": 0.1195,
       "recall": 0.2568,
       "f1": 0.1631,
-      "mean_iou": 0.5734,
+      "mean_iou": 0.5735,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -736,7 +736,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 163.0
+      "latency_ms": 131.1
     },
     {
       "total_gt": 74,
@@ -747,7 +747,7 @@
       "precision": 0.1795,
       "recall": 0.1892,
       "f1": 0.1842,
-      "mean_iou": 0.6199,
+      "mean_iou": 0.6222,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -756,7 +756,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 28.1
+      "latency_ms": 22.7
     },
     {
       "total_gt": 74,
@@ -767,7 +767,7 @@
       "precision": 0.1667,
       "recall": 0.1757,
       "f1": 0.1711,
-      "mean_iou": 0.635,
+      "mean_iou": 0.6369,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -776,7 +776,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 28.1
+      "latency_ms": 22.7
     },
     {
       "total_gt": 74,
@@ -787,7 +787,7 @@
       "precision": 0.1045,
       "recall": 0.1892,
       "f1": 0.1346,
-      "mean_iou": 0.6199,
+      "mean_iou": 0.6222,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -796,7 +796,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 534.3
+      "latency_ms": 443.6
     },
     {
       "total_gt": 74,
@@ -807,7 +807,7 @@
       "precision": 0.097,
       "recall": 0.1757,
       "f1": 0.125,
-      "mean_iou": 0.635,
+      "mean_iou": 0.6369,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -816,7 +816,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 534.3
+      "latency_ms": 443.6
     },
     {
       "total_gt": 74,
@@ -827,7 +827,7 @@
       "precision": 0.5934,
       "recall": 0.7297,
       "f1": 0.6545,
-      "mean_iou": 0.4278,
+      "mean_iou": 0.4282,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -836,7 +836,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 13.8
+      "latency_ms": 11.9
     },
     {
       "total_gt": 74,
@@ -847,7 +847,7 @@
       "precision": 0.0879,
       "recall": 0.1081,
       "f1": 0.097,
-      "mean_iou": 0.607,
+      "mean_iou": 0.6086,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -856,7 +856,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 13.8
+      "latency_ms": 11.9
     },
     {
       "total_gt": 74,
@@ -867,7 +867,7 @@
       "precision": 0.4024,
       "recall": 0.8919,
       "f1": 0.5546,
-      "mean_iou": 0.4877,
+      "mean_iou": 0.4878,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -876,7 +876,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 163.3
+      "latency_ms": 130.0
     },
     {
       "total_gt": 74,
@@ -896,7 +896,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 163.3
+      "latency_ms": 130.0
     },
     {
       "total_gt": 74,
@@ -907,7 +907,7 @@
       "precision": 1.0,
       "recall": 0.3108,
       "f1": 0.4742,
-      "mean_iou": 0.808,
+      "mean_iou": 0.8151,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -916,7 +916,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 32.5
+      "latency_ms": 23.2
     },
     {
       "total_gt": 74,
@@ -927,7 +927,7 @@
       "precision": 1.0,
       "recall": 0.3108,
       "f1": 0.4742,
-      "mean_iou": 0.808,
+      "mean_iou": 0.8151,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -936,7 +936,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 32.5
+      "latency_ms": 23.2
     },
     {
       "total_gt": 74,
@@ -947,7 +947,7 @@
       "precision": 1.0,
       "recall": 0.4189,
       "f1": 0.5905,
-      "mean_iou": 0.7678,
+      "mean_iou": 0.7722,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -956,7 +956,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 558.6
+      "latency_ms": 422.2
     },
     {
       "total_gt": 74,
@@ -967,7 +967,7 @@
       "precision": 0.9677,
       "recall": 0.4054,
       "f1": 0.5714,
-      "mean_iou": 0.7784,
+      "mean_iou": 0.7831,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 6,
@@ -976,7 +976,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 558.6
+      "latency_ms": 422.2
     },
     {
       "total_gt": 66,
@@ -987,7 +987,7 @@
       "precision": 0.3069,
       "recall": 0.9394,
       "f1": 0.4627,
-      "mean_iou": 0.3788,
+      "mean_iou": 0.3787,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -996,7 +996,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 17.1
+      "latency_ms": 14.5
     },
     {
       "total_gt": 66,
@@ -1007,7 +1007,7 @@
       "precision": 0.0099,
       "recall": 0.0303,
       "f1": 0.0149,
-      "mean_iou": 0.561,
+      "mean_iou": 0.5608,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1016,7 +1016,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 17.1
+      "latency_ms": 14.5
     },
     {
       "total_gt": 66,
@@ -1036,7 +1036,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 174.1
+      "latency_ms": 139.8
     },
     {
       "total_gt": 66,
@@ -1056,7 +1056,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 174.1
+      "latency_ms": 139.8
     },
     {
       "total_gt": 66,
@@ -1067,7 +1067,7 @@
       "precision": 0.0603,
       "recall": 0.1818,
       "f1": 0.0906,
-      "mean_iou": 0.6845,
+      "mean_iou": 0.6837,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1076,7 +1076,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 35.5
+      "latency_ms": 29.6
     },
     {
       "total_gt": 66,
@@ -1087,7 +1087,7 @@
       "precision": 0.0553,
       "recall": 0.1667,
       "f1": 0.083,
-      "mean_iou": 0.7063,
+      "mean_iou": 0.7055,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1096,7 +1096,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 35.5
+      "latency_ms": 29.6
     },
     {
       "total_gt": 66,
@@ -1107,7 +1107,7 @@
       "precision": 0.05,
       "recall": 0.1818,
       "f1": 0.0784,
-      "mean_iou": 0.6845,
+      "mean_iou": 0.6838,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1116,7 +1116,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 564.7
+      "latency_ms": 426.4
     },
     {
       "total_gt": 66,
@@ -1127,7 +1127,7 @@
       "precision": 0.0458,
       "recall": 0.1667,
       "f1": 0.0719,
-      "mean_iou": 0.7064,
+      "mean_iou": 0.7055,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1136,7 +1136,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 564.7
+      "latency_ms": 426.4
     },
     {
       "total_gt": 66,
@@ -1147,7 +1147,7 @@
       "precision": 0.3103,
       "recall": 0.9545,
       "f1": 0.4684,
-      "mean_iou": 0.4054,
+      "mean_iou": 0.4053,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1156,7 +1156,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 18.1
+      "latency_ms": 14.2
     },
     {
       "total_gt": 66,
@@ -1167,7 +1167,7 @@
       "precision": 0.0296,
       "recall": 0.0909,
       "f1": 0.0446,
-      "mean_iou": 0.5428,
+      "mean_iou": 0.5427,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1176,7 +1176,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 18.1
+      "latency_ms": 14.2
     },
     {
       "total_gt": 66,
@@ -1196,7 +1196,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 172.9
+      "latency_ms": 137.1
     },
     {
       "total_gt": 66,
@@ -1216,7 +1216,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 172.9
+      "latency_ms": 137.1
     },
     {
       "total_gt": 66,
@@ -1227,7 +1227,7 @@
       "precision": 0.6082,
       "recall": 0.8939,
       "f1": 0.7239,
-      "mean_iou": 0.8207,
+      "mean_iou": 0.814,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1236,7 +1236,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 34.7
+      "latency_ms": 26.5
     },
     {
       "total_gt": 66,
@@ -1247,7 +1247,7 @@
       "precision": 0.6082,
       "recall": 0.8939,
       "f1": 0.7239,
-      "mean_iou": 0.8207,
+      "mean_iou": 0.814,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1256,7 +1256,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 34.7
+      "latency_ms": 26.5
     },
     {
       "total_gt": 66,
@@ -1267,7 +1267,7 @@
       "precision": 0.5413,
       "recall": 0.8939,
       "f1": 0.6743,
-      "mean_iou": 0.8221,
+      "mean_iou": 0.8154,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1276,7 +1276,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 551.5
+      "latency_ms": 433.5
     },
     {
       "total_gt": 66,
@@ -1287,7 +1287,7 @@
       "precision": 0.5413,
       "recall": 0.8939,
       "f1": 0.6743,
-      "mean_iou": 0.8221,
+      "mean_iou": 0.8154,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 7,
@@ -1296,7 +1296,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 551.5
+      "latency_ms": 433.5
     },
     {
       "total_gt": 73,
@@ -1307,7 +1307,7 @@
       "precision": 0.3279,
       "recall": 0.8219,
       "f1": 0.4687,
-      "mean_iou": 0.3616,
+      "mean_iou": 0.3617,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1316,7 +1316,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 15.1
+      "latency_ms": 13.6
     },
     {
       "total_gt": 73,
@@ -1327,7 +1327,7 @@
       "precision": 0.0055,
       "recall": 0.0137,
       "f1": 0.0078,
-      "mean_iou": 0.5316,
+      "mean_iou": 0.5318,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1336,18 +1336,18 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 15.1
+      "latency_ms": 13.6
     },
     {
       "total_gt": 73,
       "total_preds": 211,
-      "tp": 66,
-      "fp": 145,
-      "fn": 7,
-      "precision": 0.3128,
-      "recall": 0.9041,
-      "f1": 0.4648,
-      "mean_iou": 0.4158,
+      "tp": 65,
+      "fp": 146,
+      "fn": 8,
+      "precision": 0.3081,
+      "recall": 0.8904,
+      "f1": 0.4577,
+      "mean_iou": 0.4175,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1356,7 +1356,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 167.7
+      "latency_ms": 134.5
     },
     {
       "total_gt": 73,
@@ -1367,7 +1367,7 @@
       "precision": 0.0379,
       "recall": 0.1096,
       "f1": 0.0563,
-      "mean_iou": 0.5358,
+      "mean_iou": 0.5357,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1376,7 +1376,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 167.7
+      "latency_ms": 134.5
     },
     {
       "total_gt": 73,
@@ -1387,7 +1387,7 @@
       "precision": 0.0751,
       "recall": 0.1781,
       "f1": 0.1057,
-      "mean_iou": 0.5404,
+      "mean_iou": 0.5414,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1396,7 +1396,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 34.5
+      "latency_ms": 30.2
     },
     {
       "total_gt": 73,
@@ -1407,7 +1407,7 @@
       "precision": 0.0347,
       "recall": 0.0822,
       "f1": 0.0488,
-      "mean_iou": 0.688,
+      "mean_iou": 0.6904,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1416,7 +1416,7 @@
       "input": "color",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 34.5
+      "latency_ms": 30.2
     },
     {
       "total_gt": 73,
@@ -1427,7 +1427,7 @@
       "precision": 0.0568,
       "recall": 0.1781,
       "f1": 0.0861,
-      "mean_iou": 0.5404,
+      "mean_iou": 0.5414,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1436,7 +1436,7 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 552.4
+      "latency_ms": 432.6
     },
     {
       "total_gt": 73,
@@ -1447,7 +1447,7 @@
       "precision": 0.0262,
       "recall": 0.0822,
       "f1": 0.0397,
-      "mean_iou": 0.6881,
+      "mean_iou": 0.6904,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1456,18 +1456,18 @@
       "input": "color",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 552.4
+      "latency_ms": 432.6
     },
     {
       "total_gt": 73,
       "total_preds": 179,
-      "tp": 61,
-      "fp": 118,
-      "fn": 12,
-      "precision": 0.3408,
-      "recall": 0.8356,
-      "f1": 0.4841,
-      "mean_iou": 0.3631,
+      "tp": 62,
+      "fp": 117,
+      "fn": 11,
+      "precision": 0.3464,
+      "recall": 0.8493,
+      "f1": 0.4921,
+      "mean_iou": 0.3623,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1476,7 +1476,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 15.1
+      "latency_ms": 14.4
     },
     {
       "total_gt": 73,
@@ -1487,7 +1487,7 @@
       "precision": 0.0056,
       "recall": 0.0137,
       "f1": 0.0079,
-      "mean_iou": 0.5525,
+      "mean_iou": 0.5527,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1496,7 +1496,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 15.1
+      "latency_ms": 14.4
     },
     {
       "total_gt": 73,
@@ -1516,7 +1516,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 167.8
+      "latency_ms": 139.5
     },
     {
       "total_gt": 73,
@@ -1536,7 +1536,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 167.8
+      "latency_ms": 139.5
     },
     {
       "total_gt": 73,
@@ -1547,7 +1547,7 @@
       "precision": 0.6667,
       "recall": 0.7945,
       "f1": 0.725,
-      "mean_iou": 0.827,
+      "mean_iou": 0.8306,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1556,7 +1556,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.3,
-      "latency_ms": 34.1
+      "latency_ms": 25.6
     },
     {
       "total_gt": 73,
@@ -1567,7 +1567,7 @@
       "precision": 0.6667,
       "recall": 0.7945,
       "f1": 0.725,
-      "mean_iou": 0.827,
+      "mean_iou": 0.8306,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1576,7 +1576,7 @@
       "input": "gray",
       "inference": "direct",
       "iou_thresh": 0.5,
-      "latency_ms": 34.1
+      "latency_ms": 25.6
     },
     {
       "total_gt": 73,
@@ -1587,7 +1587,7 @@
       "precision": 0.6562,
       "recall": 0.863,
       "f1": 0.7456,
-      "mean_iou": 0.822,
+      "mean_iou": 0.8254,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1596,7 +1596,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.3,
-      "latency_ms": 555.2
+      "latency_ms": 421.1
     },
     {
       "total_gt": 73,
@@ -1607,7 +1607,7 @@
       "precision": 0.6562,
       "recall": 0.863,
       "f1": 0.7456,
-      "mean_iou": 0.822,
+      "mean_iou": 0.8254,
       "manual_id": "McIntosh_MC_2100",
       "split": "test",
       "page": 8,
@@ -1616,7 +1616,7 @@
       "input": "gray",
       "inference": "sliced",
       "iou_thresh": 0.5,
-      "latency_ms": 555.2
+      "latency_ms": 421.1
     }
   ]
 }
