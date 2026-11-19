@@ -1,0 +1,16 @@
+{
+  "manuals": [
+    {"manual_id": "Toshiba_SY_330", "folder": "Toshiba-SY-330-Service-Manual", "device_model": "Toshiba SY-330 Preamplifier", "split": "dev", "pages": {"bom": [7, 8], "schematic": [2, 5], "pcb": [6]}},
+    {"manual_id": "LAB_Series_L6", "folder": "LAB Series L6 Service Manual", "device_model": "LAB Series L6 Guitar Amplifier", "split": "test", "pages": {"bom": [11, 12, 13, 14], "schematic": [1, 2, 3], "pcb": [4, 5, 6]}},
+    {"manual_id": "McIntosh_MC_2100", "folder": "manualsplus_13963", "device_model": "McIntosh MC-2100 Power Amplifier", "split": "test", "pages": {"bom": [10], "schematic": [7, 8], "pcb": [6, 8]}},
+    {"manual_id": "Acoustic_450", "folder": "Acoustic_Control_450_Lead_Bass_Guitar_Amplifier_Service Manual_1974", "device_model": "Acoustic Control 450", "split": "train", "pages": {"bom": [14, 15, 16, 17], "schematic": [6, 7, 8, 9, 10], "pcb": [11, 12, 13]}},
+    {"manual_id": "Akai_AM_M630_M830", "folder": "Akai_AM-M630_AM-M830_Digital_Integrated_Amplifier_Service_Manual", "device_model": "Akai AM-M630 / AM-M830", "split": "train", "pages": {"bom": [5, 6, 7, 8], "schematic": [13, 14, 15, 16, 17, 18, 19, 20, 21, 24, 25, 26, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 53, 54, 55, 56, 57, 58, 59, 60], "pcb": [22, 23, 45, 46, 47, 48, 49, 50, 51, 52]}},
+    {"manual_id": "Alpine_PDX_5", "folder": "alpine_pdx-5_pwr_amplifier", "device_model": "Alpine PDX-5", "split": "train", "pages": {"bom": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], "schematic": [9, 10, 11, 12, 13], "pcb": [7, 8]}},
+    {"manual_id": "HP_5261A", "folder": "HP 5261A Video Amplifier 05261-9011 Sep. 1972", "device_model": "HP 5261A Video Amplifier", "split": "train", "pages": {"bom": [31, 32], "schematic": [25, 39, 41], "pcb": [23, 24, 37, 38, 40]}},
+    {"manual_id": "Infinity_Kappa_255a", "folder": "infinity_kappa_255a_car_amplifier", "device_model": "Infinity Kappa 255a", "split": "train", "pages": {"bom": [22, 23, 24, 25, 26, 27, 28, 29], "schematic": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41], "pcb": [14, 16, 17, 19]}},
+    {"manual_id": "JBL_MS_A1004", "folder": "jbl_ms-a1004_rev1_car_amplifier_sm", "device_model": "JBL MS-A1004", "split": "train", "pages": {"bom": [20, 21, 22, 23, 24, 25], "schematic": [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80], "pcb": [14]}},
+    {"manual_id": "JVC_JP_S7", "folder": "hfe_jvc_jp-s7_service_en", "device_model": "JVC JP-S7", "split": "train", "pages": {"bom": [14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 40, 41], "schematic": [43, 44, 45, 46], "pcb": [13, 20, 22, 23, 24, 25, 26, 29, 32, 34, 36, 39, 40]}},
+    {"manual_id": "Sony_TA_1630", "folder": "Sony-TA-1630-Service-Manual", "device_model": "Sony TA-1630", "split": "train", "pages": {"bom": [9], "schematic": [2, 6], "pcb": [3, 4, 5, 7, 8]}},
+    {"manual_id": "TEAC_AR_250SFM", "folder": "manualsplus_08649", "device_model": "Teac AR-250SFM", "split": "train", "pages": {"bom": [65, 66, 67, 68, 69], "schematic": [57, 58, 59, 60, 61, 62, 63, 64], "pcb": [71, 72]}, "note": "Parts list pages 66 and 68 are blank; kept as hard negatives for page classification"}
+  ]
+}

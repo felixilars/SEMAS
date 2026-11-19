@@ -1,86 +1,20 @@
 from pathlib import Path
 
-# Short document names
-DEVICE_SHORT_NAMES = {
-    "Acoustic_Control_450_Lead_Bass_Guitar_Amplifier_Service Manual_1974": "Acoustic_450",
-    "Akai_AM-M630_AM-M830_Digital_Integrated_Amplifier_Service_Manual": "Akai_AM_M630_M830",
-    "HP 5261A Video Amplifier 05261-9011 Sep. 1972": "HP_5261A",
-    "Sony-TA-1630-Service-Manual": "Sony_TA_1630",
-    "Toshiba-SY-330-Service-Manual": "Toshiba_SY_330",
-    "alpine_pdx-5_pwr_amplifier": "Alpine_PDX_5",
-    "hfe_jvc_jp-s7_service_en": "JVC_JP_S7",
-    "infinity_kappa_255a_car_amplifier": "Infinity_Kappa_255a",
-    "jbl_ms-a1004_rev1_car_amplifier_sm": "JBL_MS_A1004",
-    "manualsplus_08649": "TEAC_AR_250SFM",
-    "manualsplus_13963": "McIntosh_MC_2100",
-    "LAB Series L6 Service Manual": "LAB_Series_L6",
-}
+from src.ingestion.manifest import EXTRACTED_MANUALS_DIR, PAGE_ROLES, RAW_MANUALS_DIR, load_manifest, page_image_name
 
-# 1-based display page numbers
-MANUALS_PAGES = {
-    "Acoustic_Control_450_Lead_Bass_Guitar_Amplifier_Service Manual_1974": {
-        "bom": [14,15,16,17],
-        "schematic": [6,7,8,9,10],
-        "pcb": [11,12,13]   
-    },
-    "Akai_AM-M630_AM-M830_Digital_Integrated_Amplifier_Service_Manual": {
-        "bom": [5,6,7,8],
-        "schematic": [13, 14, 15, 16, 17, 18, 19, 20, 21,24,25,26,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,53,54,55,56,57,58,59,60],
-        "pcb": [22,23,45,46,47,48,49,50,51,52]
-    },
-    "HP 5261A Video Amplifier 05261-9011 Sep. 1972": {
-        "bom": [31,32],
-        "schematic": [25,39,41],
-        "pcb": [23,24,37,38,40]
-    },
-    "Sony-TA-1630-Service-Manual": {
-        "bom": [9],
-        "schematic": [2,6],
-        "pcb": [3,4,5,7,8]
-    },
-    "Toshiba-SY-330-Service-Manual": {
-        "bom": [7,8],
-        "schematic": [2,5],
-        "pcb": [6]
-    },
-    "alpine_pdx-5_pwr_amplifier": {
-        "bom": [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39], 
-        "schematic": [9,10,11,12,13],
-        "pcb": [7,8]
-    },
-    "hfe_jvc_jp-s7_service_en": {
-        "bom": [14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 40, 41],
-        "schematic": [43, 44, 45, 46],
-        "pcb": [13, 20, 22, 23, 24, 25, 26, 29, 32, 34, 36, 39, 40]
-    },
-    "infinity_kappa_255a_car_amplifier": {
-        "bom": [22,23,24,25,26,27,28,29],
-        "schematic": [30,31,32,33,34,35,36,37,38,39,40,41],
-        "pcb": [14,16,17,19]
-    },
-    "jbl_ms-a1004_rev1_car_amplifier_sm": {
-        "bom": [20,21,22,23,24,25], 
-        "schematic": [65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80],
-        "pcb": [14]
-    },
-    "manualsplus_08649": {
-        "bom": [65,66,67,68,69], #66 and 68 are white page. we will use it to improve training model (confusing pages)
-        "schematic": [57,58,59,60,61,62,63,64],
-        "pcb": [71,72]
-    },
-    "manualsplus_13963": {
-        "bom": [10],
-        "schematic": [7,8],
-        "pcb": [6,8]
-    },
-    "LAB Series L6 Service Manual": {
-        "bom": [11, 12, 13, 14],
-        "schematic": [1, 2, 3],
-        "pcb": [4, 5, 6],
-    },
-}
+RENDER_DPI = 300
+PDF_POINTS_PER_INCH = 72
 
-CATEGORIES = ["bom", "schematic", "pcb"]
+
+def registry_tables(manuals):
+    """ Page tables and file name prefixes of the registered manuals, keyed by folder name.
+
+    Args:
+      - manuals (list) : ManualEntry objects of the registry.
+    Returns: Tuple (pages by folder, manual identifier by folder).
+    """
+    return {m.folder: m.pages for m in manuals}, {m.folder: m.manual_id for m in manuals}
+
 
 def create_directory_structure(output_base_dir, manuals_dict):
     """ Create folder hierarchy for manual pages.
@@ -92,7 +26,7 @@ def create_directory_structure(output_base_dir, manuals_dict):
 
     for manual_name in manuals_dict.keys():
         manual_folder = output_base_dir / manual_name
-        for category in CATEGORIES:
+        for category in PAGE_ROLES:
             cat_dir = manual_folder / category
             cat_dir.mkdir(parents=True, exist_ok=True)
 
@@ -118,19 +52,17 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
       - manuals_dict (dict) : Dictionary of manuals and their page numbers.
       - raw_manuals_dir (Path) : Directory of raw manuals.
       - output_base_dir (Path) : Directory of output images.
-      - device_names (dict) : Dictionary mapping manual names to short names.
+      - device_names (dict) : Folder name to manual identifier, the prefix of the page file names.
       - force (bool) : Whether to re-render pages if they already exist on disk.
     """
-    if device_names is None:
-        device_names = DEVICE_SHORT_NAMES
-
     try:
         import pymupdf as fitz 
     except ImportError:
         print("[ERROR] PyMuPDF (fitz) is not installed.")
         return
 
-    matrix = fitz.Matrix(4.167, 4.167)  # High resolution (~300 DPI)
+    zoom = RENDER_DPI / PDF_POINTS_PER_INCH
+    matrix = fitz.Matrix(zoom, zoom)
     pdf_index = build_pdf_index(raw_manuals_dir)
 
     for manual_name, categories in manuals_dict.items():
@@ -158,7 +90,7 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
             for page_num in pages:
                 # Convert to 0-based index
                 page_idx = page_num - 1
-                out_img_path = save_dir / (device_short_name + "_page_" + str(page_num).zfill(3) + ".png")
+                out_img_path = save_dir / page_image_name(device_short_name, page_num)
 
                 # Caching check: avoid expensive high-DPI re-rendering if page already exists
                 if out_img_path.exists() and not force:
@@ -176,16 +108,12 @@ def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, devi
         doc.close()
 
 def main():
-    """ Run page extraction across all configured service manuals."""
-    # Resolve paths
-    base_dir = Path(__file__).resolve().parent.parent.parent
-    raw_manuals_dir = base_dir / "data" / "raw_manuals"
-    output_base_dir = base_dir / "data" / "extracted_manuals"
+    """ Render the hand-sorted pages of every registered manual."""
+    pages_table, manual_ids = registry_tables(load_manifest())
+    create_directory_structure(EXTRACTED_MANUALS_DIR, pages_table)
+    if RAW_MANUALS_DIR.exists():
+        extract_pages_to_images(pages_table, RAW_MANUALS_DIR, EXTRACTED_MANUALS_DIR, manual_ids)
 
-    create_directory_structure(output_base_dir, MANUALS_PAGES)
-
-    if raw_manuals_dir.exists():
-        extract_pages_to_images(MANUALS_PAGES, raw_manuals_dir, output_base_dir, DEVICE_SHORT_NAMES)
 
 if __name__ == "__main__":
     main()
