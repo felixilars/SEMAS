@@ -7,15 +7,9 @@ from schematic diagram bounding boxes using multi-angle orthogonal text orientat
 
 from pathlib import Path
 import json
-import re
-import sys
-import numpy as np
 
-sys.path.append(str(Path(__file__).parent.parent))
-
-from ocr_engine.base import BaseOCREngine
-from ocr_engine.rotations import read_text_with_orthogonal_rotations
-from ocr_engine.post_corrector import split_refdes_and_spec
+from src.ocr_engine.rotations import read_text_with_orthogonal_rotations
+from src.ocr_engine.post_corrector import split_refdes_and_spec
 
 class SchematicOCRExtractor:
     """ Extracts component labels from schematic diagram image regions."""

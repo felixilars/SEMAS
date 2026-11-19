@@ -4,7 +4,6 @@ Horizontal Token Coalescing Module
 Merges severed prefix-numeric OCR bounding box pairs (e.g. 'R' + '101' -> 'R101') caused by wide font kerning on vintage technical manuals.
 """
 
-from pathlib import Path
 import re
 
 # Recognized electronic reference designator prefixes

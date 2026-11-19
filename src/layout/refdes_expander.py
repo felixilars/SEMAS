@@ -4,7 +4,6 @@ Reference Designator Range Expander Module
 Expands compressed, hyphenated, or comma-delimited reference designator groups into canonical individual component identifiers (e.g. 'R101-105' into individual resistor identifiers from R101 to R105).
 """
 
-from pathlib import Path
 import re
 
 

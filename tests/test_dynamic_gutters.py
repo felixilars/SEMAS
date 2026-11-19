@@ -7,7 +7,6 @@ Validates vertical projection histogram calculation and whitespace gutter isolat
 import sys
 from pathlib import Path
 import numpy as np
-import pytest
 
 # Ensure repository root is on sys.path
 sys.path.append(str(Path(__file__).parent.parent))

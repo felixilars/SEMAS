@@ -8,13 +8,12 @@ import json
 from pathlib import Path
 import sys
 import numpy as np
-import pytest
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from ocr_engine.base import BaseOCREngine
-from ocr_engine.schematic_extractor import SchematicOCRExtractor
-from ocr_engine import SchematicOCRExtractor as ExportedExtractor
+from src.ocr_engine.base import BaseOCREngine
+from src.ocr_engine.schematic_extractor import SchematicOCRExtractor
+from src.ocr_engine import SchematicOCRExtractor as ExportedExtractor
 
 class MockSchematicOCREngine(BaseOCREngine):
     """ Mock OCR engine returning canned recognition results for test images."""

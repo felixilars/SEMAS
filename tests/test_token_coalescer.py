@@ -6,7 +6,6 @@ Validates horizontal merging of prefix-numeric pairs and bounds expansion.
 
 import sys
 from pathlib import Path
-import pytest
 
 # Ensure repository root is on sys.path
 sys.path.append(str(Path(__file__).parent.parent))

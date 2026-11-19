@@ -1,0 +1,4597 @@
+{
+  "manual_id": "Toshiba_SY_330",
+  "device_model": "Toshiba SY-330 Preamplifier",
+  "total_components": 158,
+  "components": {
+    "IC01": {
+      "refdes": "IC01",
+      "component_type": "Integrated Circuit",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2286.16,
+        1291.31,
+        2451.49,
+        1339.77
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        452.4,
+        1724.76,
+        537.74,
+        1754.58
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3487.16,
+        669.59,
+        3545.31,
+        699.55
+      ],
+      "board_name": "Main Board"
+    },
+    "VR02": {
+      "refdes": "VR02",
+      "component_type": "Potentiometer",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 8,
+      "bbox_table": [
+        417.77,
+        667.51,
+        538.01,
+        719.93
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1509.39,
+        1967.37,
+        1605.53,
+        2004.08
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1520.07,
+        2529.2,
+        1545.59,
+        2604.32
+      ],
+      "board_name": "Main Board"
+    },
+    "VR004": {
+      "refdes": "VR004",
+      "component_type": "Potentiometer",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 2,
+      "bbox_schema": [
+        1741.01,
+        1918.43,
+        1824.91,
+        1967.37
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "VR005": {
+      "refdes": "VR005",
+      "component_type": "Potentiometer",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 2,
+      "bbox_schema": [
+        1870.36,
+        1920.17,
+        1945.52,
+        1969.99
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "IC002": {
+      "refdes": "IC002",
+      "component_type": "Integrated Circuit",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 2,
+      "bbox_schema": [
+        1822.29,
+        1729.64,
+        1931.54,
+        1761.1
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "TR02": {
+      "refdes": "TR02",
+      "component_type": "Transistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2290.43,
+        652.78,
+        2470.03,
+        701.24
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1835.39,
+        2045.15,
+        1892.2,
+        2072.24
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1260.38,
+        1734.08,
+        1296.34,
+        1800.66
+      ],
+      "board_name": "Main Board"
+    },
+    "TR01": {
+      "refdes": "TR01",
+      "component_type": "Transistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2290.43,
+        652.78,
+        2470.03,
+        701.24
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1831.91,
+        2089.73,
+        1891.33,
+        2114.2
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1026.21,
+        1724.9,
+        1052.99,
+        1784.59
+      ],
+      "board_name": "Main Board"
+    },
+    "TR07": {
+      "refdes": "TR07",
+      "component_type": "Transistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2290.27,
+        893.44,
+        2404.91,
+        948.79
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1786.45,
+        2139.55,
+        1852.01,
+        2173.64
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1103.5,
+        1907.02,
+        1135.64,
+        1969.02
+      ],
+      "board_name": "Main Board"
+    },
+    "TR08": {
+      "refdes": "TR08",
+      "component_type": "Transistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2295.54,
+        940.88,
+        2400.96,
+        987.0
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1756.73,
+        2040.78,
+        1825.79,
+        2066.14
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1204.72,
+        2113.93,
+        1230.24,
+        2176.29
+      ],
+      "board_name": "Main Board"
+    },
+    "IC02": {
+      "refdes": "IC02",
+      "component_type": "Integrated Circuit",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2286.16,
+        1291.31,
+        2451.49,
+        1339.77
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1829.28,
+        2377.28,
+        1927.16,
+        2408.74
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1080.67,
+        1017.75,
+        1110.04,
+        1080.69
+      ],
+      "board_name": "Main Board"
+    },
+    "VR015": {
+      "refdes": "VR015",
+      "component_type": "Potentiometer",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 2,
+      "bbox_schema": [
+        1877.35,
+        2573.05,
+        1951.63,
+        2621.99
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "VR014": {
+      "refdes": "VR014",
+      "component_type": "Potentiometer",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 2,
+      "bbox_schema": [
+        1742.75,
+        2567.81,
+        1822.29,
+        2621.99
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "TR03": {
+      "refdes": "TR03",
+      "component_type": "Transistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2295.54,
+        703.69,
+        2399.64,
+        748.49
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        610.93,
+        2295.11,
+        670.36,
+        2323.09
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2733.16,
+        2320.88,
+        2810.02,
+        2355.82
+      ],
+      "board_name": "Main Board"
+    },
+    "TR04": {
+      "refdes": "TR04",
+      "component_type": "Transistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2296.86,
+        752.44,
+        2399.64,
+        790.66
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        681.71,
+        2298.61,
+        744.64,
+        2323.97
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "TR06": {
+      "refdes": "TR06",
+      "component_type": "Transistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2294.21,
+        853.91,
+        2395.68,
+        889.49
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        710.33,
+        3068.9,
+        774.57,
+        3098.26
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        415.32,
+        1836.65,
+        444.69,
+        1905.45
+      ],
+      "board_name": "Main Board"
+    },
+    "TR05": {
+      "refdes": "TR05",
+      "component_type": "Transistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2296.86,
+        795.92,
+        2399.64,
+        847.32
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        712.16,
+        2977.12,
+        777.32,
+        3004.65
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        896.92,
+        1813.99,
+        927.13,
+        1875.24
+      ],
+      "board_name": "Main Board"
+    },
+    "S001": {
+      "refdes": "S001",
+      "component_type": "Switch",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2283.27,
+        1440.67,
+        2375.77,
+        1483.75
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        664.23,
+        1659.99,
+        774.35,
+        1692.79
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2640.3,
+        585.27,
+        2711.5,
+        616.63
+      ],
+      "board_name": "Main Board"
+    },
+    "S002": {
+      "refdes": "S002",
+      "component_type": "Switch",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2285.81,
+        1488.82,
+        2378.31,
+        1530.62
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1048.47,
+        1663.51,
+        1151.57,
+        1691.63
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2643.92,
+        1045.03,
+        2724.78,
+        1076.4
+      ],
+      "board_name": "Main Board"
+    },
+    "S004": {
+      "refdes": "S004",
+      "component_type": "Switch",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2282.0,
+        1590.19,
+        2377.03,
+        1630.74
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1212.25,
+        2078.49,
+        1281.7,
+        2107.73
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1428.98,
+        1713.38,
+        1462.04,
+        1780.47
+      ],
+      "board_name": "Main Board"
+    },
+    "S003": {
+      "refdes": "S003",
+      "component_type": "Switch",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2284.53,
+        1542.04,
+        2385.9,
+        1578.79
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1404.75,
+        2080.93,
+        1480.29,
+        2113.83
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1425.97,
+        1922.67,
+        1463.03,
+        1990.77
+      ],
+      "board_name": "Main Board"
+    },
+    "VR01": {
+      "refdes": "VR01",
+      "component_type": "Potentiometer",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 8,
+      "bbox_table": [
+        420.85,
+        622.8,
+        533.39,
+        661.34
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        1373.07,
+        2174.74,
+        1440.09,
+        2206.42
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "S005": {
+      "refdes": "S005",
+      "component_type": "Switch",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2283.28,
+        1637.06,
+        2378.3,
+        1675.08
+      ],
+      "page_schema": 2,
+      "bbox_schema": [
+        472.72,
+        2905.75,
+        545.82,
+        2936.21
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "C48": {
+      "refdes": "C48",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3376.03,
+        762.5,
+        3516.83,
+        808.0
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        839.73,
+        609.47,
+        892.79,
+        634.29
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3669.54,
+        718.93,
+        3717.12,
+        749.77
+      ],
+      "board_name": "Main Board"
+    },
+    "R11": {
+      "refdes": "R11",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3367.37,
+        1698.3,
+        3512.51,
+        1738.38
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        767.82,
+        712.18,
+        810.62,
+        739.57
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3965.57,
+        658.14,
+        4000.81,
+        680.16
+      ],
+      "board_name": "Main Board"
+    },
+    "C47": {
+      "refdes": "C47",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3378.2,
+        710.52,
+        3451.84,
+        752.76
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        632.58,
+        819.18,
+        681.37,
+        845.72
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3955.88,
+        818.49,
+        4003.46,
+        842.28
+      ],
+      "board_name": "Main Board"
+    },
+    "R01": {
+      "refdes": "R01",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3373.86,
+        1447.03,
+        3511.41,
+        1499.01
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        958.71,
+        787.51,
+        1001.51,
+        817.47
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3601.7,
+        602.63,
+        3641.34,
+        622.89
+      ],
+      "board_name": "Main Board"
+    },
+    "R05": {
+      "refdes": "R05",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3368.44,
+        1547.76,
+        3510.34,
+        1591.08
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1070.84,
+        796.93,
+        1123.06,
+        822.61
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3522.41,
+        555.05,
+        3573.51,
+        581.49
+      ],
+      "board_name": "Main Board"
+    },
+    "C03": {
+      "refdes": "C03",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2123.53,
+        2415.77,
+        2170.2
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1045.16,
+        832.02,
+        1093.95,
+        853.42
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3414.04,
+        540.07,
+        3461.62,
+        565.62
+      ],
+      "board_name": "Main Board"
+    },
+    "R07": {
+      "refdes": "R07",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3370.62,
+        1596.5,
+        3504.92,
+        1635.48
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1210.38,
+        772.1,
+        1263.45,
+        799.5
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3363.82,
+        661.66,
+        3413.16,
+        687.22
+      ],
+      "board_name": "Main Board"
+    },
+    "C09": {
+      "refdes": "C09",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2282.42,
+        2270.21,
+        2415.78,
+        2311.32
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1307.11,
+        663.4,
+        1364.46,
+        688.22
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3194.66,
+        645.81,
+        3243.12,
+        672.24
+      ],
+      "board_name": "Main Board"
+    },
+    "R09": {
+      "refdes": "R09",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3370.62,
+        1643.07,
+        3508.16,
+        1686.39
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1297.68,
+        798.64,
+        1350.76,
+        828.6
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3086.29,
+        701.31,
+        3135.63,
+        731.27
+      ],
+      "board_name": "Main Board"
+    },
+    "C07": {
+      "refdes": "C07",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2223.54,
+        2424.66,
+        2264.64
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1166.72,
+        886.81,
+        1213.8,
+        913.35
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3289.81,
+        587.65,
+        3339.15,
+        613.2
+      ],
+      "board_name": "Main Board"
+    },
+    "C05": {
+      "refdes": "C05",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2281.32,
+        2173.53,
+        2421.33,
+        2213.53
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1059.72,
+        913.34,
+        1111.08,
+        943.3
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3358.53,
+        541.84,
+        3402.58,
+        565.63
+      ],
+      "board_name": "Main Board"
+    },
+    "C59": {
+      "refdes": "C59",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3376.03,
+        1154.59,
+        3509.25,
+        1199.0
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        950.15,
+        943.3,
+        998.09,
+        970.69
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3843.1,
+        705.72,
+        3891.56,
+        733.9
+      ],
+      "board_name": "Main Board"
+    },
+    "R03": {
+      "refdes": "R03",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3371.7,
+        1500.1,
+        3508.18,
+        1543.42
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        952.72,
+        857.7,
+        1005.78,
+        884.24
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3754.12,
+        661.66,
+        3805.22,
+        692.5
+      ],
+      "board_name": "Main Board"
+    },
+    "C11": {
+      "refdes": "C11",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2279.09,
+        2321.32,
+        2419.11,
+        2364.66
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1443.2,
+        809.76,
+        1486.86,
+        837.16
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3087.14,
+        607.77,
+        3131.09,
+        641.0
+      ],
+      "board_name": "Main Board"
+    },
+    "R12": {
+      "refdes": "R12",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3367.37,
+        1698.3,
+        3512.51,
+        1738.38
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        770.63,
+        1570.67,
+        816.01,
+        1595.88
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3858.09,
+        653.74,
+        3900.37,
+        675.76
+      ],
+      "board_name": "Main Board"
+    },
+    "C02": {
+      "refdes": "C02",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.21,
+        2077.97,
+        2421.33,
+        2120.19
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        867.28,
+        1573.2,
+        914.34,
+        1599.25
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3753.24,
+        813.21,
+        3800.82,
+        839.63
+      ],
+      "board_name": "Main Board"
+    },
+    "C49": {
+      "refdes": "C49",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3376.03,
+        762.5,
+        3516.83,
+        808.0
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        841.22,
+        1479.08,
+        894.16,
+        1502.61
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3385.84,
+        748.0,
+        3429.01,
+        777.96
+      ],
+      "board_name": "Main Board"
+    },
+    "C10": {
+      "refdes": "C10",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2282.42,
+        2270.21,
+        2415.78,
+        2311.32
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1295.87,
+        1527.82,
+        1341.25,
+        1553.03
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3280.91,
+        800.15,
+        3330.75,
+        822.31
+      ],
+      "board_name": "Main Board"
+    },
+    "C12": {
+      "refdes": "C12",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2279.09,
+        2321.32,
+        2419.11,
+        2364.66
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1380.75,
+        1529.5,
+        1423.61,
+        1556.38
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3061.62,
+        767.38,
+        3102.15,
+        792.06
+      ],
+      "board_name": "Main Board"
+    },
+    "R10": {
+      "refdes": "R10",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3370.62,
+        1643.07,
+        3508.16,
+        1686.39
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1295.87,
+        1669.85,
+        1340.41,
+        1696.73
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3152.37,
+        826.42,
+        3203.47,
+        851.97
+      ],
+      "board_name": "Main Board"
+    },
+    "R08": {
+      "refdes": "R08",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3370.62,
+        1596.5,
+        3504.92,
+        1635.48
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1198.39,
+        1628.66,
+        1253.01,
+        1655.55
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3381.44,
+        810.56,
+        3432.54,
+        834.35
+      ],
+      "board_name": "Main Board"
+    },
+    "R06": {
+      "refdes": "R06",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3368.44,
+        1547.76,
+        3510.34,
+        1591.08
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1063.93,
+        1656.39,
+        1119.39,
+        1681.61
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3478.35,
+        895.13,
+        3526.81,
+        919.81
+      ],
+      "board_name": "Main Board"
+    },
+    "C04": {
+      "refdes": "C04",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2123.53,
+        2415.77,
+        2170.2
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1041.24,
+        1690.0,
+        1092.5,
+        1711.01
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3400.82,
+        916.28,
+        3447.52,
+        944.48
+      ],
+      "board_name": "Main Board"
+    },
+    "C06": {
+      "refdes": "C06",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2281.32,
+        2173.53,
+        2421.33,
+        2213.53
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1047.96,
+        1774.89,
+        1103.42,
+        1799.25
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3282.76,
+        915.41,
+        3334.74,
+        944.47
+      ],
+      "board_name": "Main Board"
+    },
+    "R64": {
+      "refdes": "R64",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 8,
+      "bbox_table": [
+        423.94,
+        571.93,
+        558.06,
+        618.18
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1040.4,
+        1807.66,
+        1092.5,
+        1834.55
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3649.28,
+        985.0,
+        3700.38,
+        1007.92
+      ],
+      "board_name": "Main Board"
+    },
+    "C60": {
+      "refdes": "C60",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3376.03,
+        1154.59,
+        3509.25,
+        1199.0
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        947.95,
+        1810.18,
+        995.85,
+        1836.23
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3762.05,
+        914.52,
+        3813.15,
+        941.83
+      ],
+      "board_name": "Main Board"
+    },
+    "R04": {
+      "refdes": "R04",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3371.7,
+        1500.1,
+        3508.18,
+        1543.42
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        947.95,
+        1709.35,
+        998.37,
+        1741.27
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3564.7,
+        936.55,
+        3614.04,
+        962.1
+      ],
+      "board_name": "Main Board"
+    },
+    "R02": {
+      "refdes": "R02",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3373.86,
+        1447.03,
+        3511.41,
+        1499.01
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        955.52,
+        1637.07,
+        1002.58,
+        1663.95
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3715.36,
+        844.92,
+        3767.34,
+        874.88
+      ],
+      "board_name": "Main Board"
+    },
+    "C08": {
+      "refdes": "C08",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2223.54,
+        2424.66,
+        2264.64
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1161.57,
+        1748.02,
+        1214.13,
+        1774.82
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3246.64,
+        872.24,
+        3295.98,
+        897.78
+      ],
+      "board_name": "Main Board"
+    },
+    "R20": {
+      "refdes": "R20",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3364.11,
+        2037.32,
+        3508.17,
+        2076.3
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3886.14,
+        680.56,
+        3944.55,
+        707.64
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1198.98,
+        788.7,
+        1227.52,
+        839.88
+      ],
+      "board_name": "Main Board"
+    },
+    "C27": {
+      "refdes": "C27",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2277.98,
+        2760.25,
+        2417.99,
+        2803.59
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3660.97,
+        673.79,
+        3711.76,
+        701.73
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1318.13,
+        830.64,
+        1341.61,
+        878.47
+      ],
+      "board_name": "Main Board"
+    },
+    "C16": {
+      "refdes": "C16",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2279.1,
+        2465.78,
+        2420.22,
+        2506.89
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3355.4,
+        557.82,
+        3407.03,
+        585.75
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1576.05,
+        2089.12,
+        1601.57,
+        2132.35
+      ],
+      "board_name": "Main Board"
+    },
+    "R29": {
+      "refdes": "R29",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.03,
+        2182.45,
+        3509.25,
+        2221.44
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3111.62,
+        719.5,
+        3167.49,
+        745.74
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1567.33,
+        1563.97,
+        1594.17,
+        1617.67
+      ],
+      "board_name": "Main Board"
+    },
+    "C19": {
+      "refdes": "C19",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.21,
+        2566.9,
+        2419.11,
+        2608.01
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3192.88,
+        722.04,
+        3243.66,
+        749.12
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1377.7,
+        1619.35,
+        1407.07,
+        1665.5
+      ],
+      "board_name": "Main Board"
+    },
+    "R31": {
+      "refdes": "R31",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3365.2,
+        2230.11,
+        3509.26,
+        2279.93
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3276.69,
+        773.67,
+        3330.86,
+        801.61
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1433.91,
+        1511.11,
+        1461.6,
+        1555.57
+      ],
+      "board_name": "Main Board"
+    },
+    "C15": {
+      "refdes": "C15",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2279.1,
+        2465.78,
+        2420.22,
+        2506.89
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2894.08,
+        764.36,
+        2941.48,
+        790.6
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1499.52,
+        2006.21,
+        1523.62,
+        2048.73
+      ],
+      "board_name": "Main Board"
+    },
+    "R27": {
+      "refdes": "R27",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.03,
+        2130.47,
+        3506.01,
+        2173.79
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2955.02,
+        866.78,
+        3010.04,
+        890.48
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1409.52,
+        2048.73,
+        1434.32,
+        2099.75
+      ],
+      "board_name": "Main Board"
+    },
+    "C21": {
+      "refdes": "C21",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2273.54,
+        2613.57,
+        2419.11,
+        2658.01
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3371.48,
+        853.24,
+        3418.04,
+        882.02
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1418.82,
+        696.4,
+        1443.99,
+        739.19
+      ],
+      "board_name": "Main Board"
+    },
+    "R34": {
+      "refdes": "R34",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3367.37,
+        2282.1,
+        3506.01,
+        2324.34
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3462.91,
+        799.92,
+        3519.62,
+        827.0
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1243.46,
+        980.83,
+        1266.94,
+        1034.53
+      ],
+      "board_name": "Main Board"
+    },
+    "R40": {
+      "refdes": "R40",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3361.95,
+        2426.15,
+        3507.09,
+        2468.39
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3649.97,
+        767.75,
+        3707.53,
+        793.99
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1366.79,
+        1037.05,
+        1397.83,
+        1089.07
+      ],
+      "board_name": "Main Board"
+    },
+    "R48": {
+      "refdes": "R48",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.03,
+        2623.28,
+        3500.58,
+        2662.26
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3759.17,
+        822.77,
+        3811.65,
+        849.01
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1167.11,
+        854.97,
+        1190.59,
+        898.6
+      ],
+      "board_name": "Main Board"
+    },
+    "R46": {
+      "refdes": "R46",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3367.37,
+        2575.62,
+        3508.17,
+        2614.61
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3706.69,
+        876.1,
+        3753.25,
+        897.26
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1504.39,
+        1005.17,
+        1528.73,
+        1052.16
+      ],
+      "board_name": "Main Board"
+    },
+    "VR05": {
+      "refdes": "VR05",
+      "component_type": "Potentiometer",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 8,
+      "bbox_table": [
+        414.69,
+        770.8,
+        593.51,
+        810.88
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3653.37,
+        969.2,
+        3751.55,
+        998.83
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1570.67,
+        1381.06,
+        1595.0,
+        1442.31
+      ],
+      "board_name": "Main Board"
+    },
+    "C29": {
+      "refdes": "C29",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2812.48,
+        2422.44,
+        2854.7
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3580.56,
+        881.18,
+        3627.12,
+        904.02
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1664.64,
+        1233.39,
+        1694.01,
+        1284.57
+      ],
+      "board_name": "Main Board"
+    },
+    "R36": {
+      "refdes": "R36",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3366.28,
+        2329.75,
+        3501.67,
+        2370.91
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3504.38,
+        843.93,
+        3559.4,
+        871.01
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1457.41,
+        891.89,
+        1484.26,
+        949.79
+      ],
+      "board_name": "Main Board"
+    },
+    "VR04": {
+      "refdes": "VR04",
+      "component_type": "Potentiometer",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 8,
+      "bbox_table": [
+        414.69,
+        770.8,
+        593.51,
+        810.88
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3484.07,
+        968.36,
+        3572.09,
+        994.6
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1569.84,
+        916.23,
+        1596.68,
+        985.87
+      ],
+      "board_name": "Main Board"
+    },
+    "C23": {
+      "refdes": "C23",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2281.31,
+        2666.91,
+        2423.55,
+        2704.69
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3365.56,
+        917.57,
+        3415.5,
+        942.97
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1663.82,
+        739.19,
+        1687.3,
+        789.53
+      ],
+      "board_name": "Main Board"
+    },
+    "C25": {
+      "refdes": "C25",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2709.13,
+        2417.99,
+        2756.91
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3361.33,
+        1020.0,
+        3411.27,
+        1046.24
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1629.41,
+        1047.12,
+        1653.74,
+        1095.78
+      ],
+      "board_name": "Main Board"
+    },
+    "R38": {
+      "refdes": "R38",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3365.2,
+        2378.5,
+        3508.18,
+        2418.57
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3485.76,
+        1067.39,
+        3535.7,
+        1097.03
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1566.48,
+        1094.94,
+        1595.02,
+        1141.93
+      ],
+      "board_name": "Main Board"
+    },
+    "C31": {
+      "refdes": "C31",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2863.6,
+        2415.77,
+        2904.7
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3656.75,
+        1025.08,
+        3706.69,
+        1050.46
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1571.52,
+        1284.57,
+        1599.2,
+        1328.2
+      ],
+      "board_name": "Main Board"
+    },
+    "R44": {
+      "refdes": "R44",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.03,
+        2531.2,
+        3512.51,
+        2568.03
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3645.74,
+        1075.87,
+        3705.84,
+        1098.71
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1506.07,
+        1238.42,
+        1528.73,
+        1288.76
+      ],
+      "board_name": "Main Board"
+    },
+    "C17": {
+      "refdes": "C17",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2281.32,
+        2511.34,
+        2416.88,
+        2561.34
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2775.57,
+        1022.53,
+        2817.89,
+        1048.77
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1586.68,
+        2224.48,
+        1615.03,
+        2272.66
+      ],
+      "board_name": "Main Board"
+    },
+    "C57": {
+      "refdes": "C57",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3374.95,
+        1105.85,
+        3508.17,
+        1152.42
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2762.87,
+        1068.25,
+        2809.43,
+        1093.63
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2503.59,
+        1677.65,
+        2559.45,
+        1710.31
+      ],
+      "board_name": "Main Board"
+    },
+    "R25": {
+      "refdes": "R25",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3364.11,
+        2082.81,
+        3506.01,
+        2131.55
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2563.95,
+        999.68,
+        2621.51,
+        1028.46
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2529.36,
+        1442.16,
+        2579.21,
+        1473.1
+      ],
+      "board_name": "Main Board"
+    },
+    "C18": {
+      "refdes": "C18",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2281.32,
+        2511.34,
+        2416.88,
+        2561.34
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3010.89,
+        1404.29,
+        3058.29,
+        1427.99
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1437.16,
+        2249.99,
+        1457.72,
+        2296.05
+      ],
+      "board_name": "Main Board"
+    },
+    "R26": {
+      "refdes": "R26",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3364.11,
+        2082.81,
+        3506.01,
+        2131.55
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2635.91,
+        1494.01,
+        2692.62,
+        1526.18
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2645.39,
+        1516.08,
+        2694.38,
+        1542.72
+      ],
+      "board_name": "Main Board"
+    },
+    "C58": {
+      "refdes": "C58",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3374.95,
+        1105.85,
+        3508.17,
+        1152.42
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2755.26,
+        1571.05,
+        2806.89,
+        1599.83
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2501.01,
+        1576.24,
+        2551.72,
+        1604.6
+      ],
+      "board_name": "Main Board"
+    },
+    "R30": {
+      "refdes": "R30",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.03,
+        2182.45,
+        3509.25,
+        2221.44
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3109.93,
+        1500.79,
+        3164.1,
+        1532.11
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1306.39,
+        1620.18,
+        1331.56,
+        1669.68
+      ],
+      "board_name": "Main Board"
+    },
+    "C20": {
+      "refdes": "C20",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.21,
+        2566.9,
+        2419.11,
+        2608.01
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3192.03,
+        1495.71,
+        3248.74,
+        1521.95
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1276.17,
+        1596.68,
+        1301.35,
+        1641.99
+      ],
+      "board_name": "Main Board"
+    },
+    "C55": {
+      "refdes": "C55",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3376.03,
+        1052.78,
+        3507.09,
+        1101.52
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3341.01,
+        1425.46,
+        3390.11,
+        1450.84
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1167.94,
+        941.39,
+        1199.82,
+        986.7
+      ],
+      "board_name": "Main Board"
+    },
+    "C28": {
+      "refdes": "C28",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2277.98,
+        2760.25,
+        2417.99,
+        2803.59
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3642.48,
+        1534.94,
+        3697.18,
+        1566.56
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        961.53,
+        913.71,
+        989.23,
+        965.73
+      ],
+      "board_name": "Main Board"
+    },
+    "R19": {
+      "refdes": "R19",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3364.11,
+        2037.32,
+        3508.17,
+        2076.3
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3886.06,
+        1543.49,
+        3935.62,
+        1570.84
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        939.72,
+        813.02,
+        968.25,
+        860.86
+      ],
+      "board_name": "Main Board"
+    },
+    "R41": {
+      "refdes": "R41",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3361.95,
+        2426.15,
+        3507.09,
+        2468.39
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3633.07,
+        1627.24,
+        3681.78,
+        1652.88
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1219.12,
+        1308.89,
+        1247.66,
+        1355.05
+      ],
+      "board_name": "Main Board"
+    },
+    "R49": {
+      "refdes": "R49",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.03,
+        2623.28,
+        3500.58,
+        2662.26
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3686.93,
+        1643.48,
+        3735.64,
+        1668.26
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1106.69,
+        895.25,
+        1132.71,
+        939.73
+      ],
+      "board_name": "Main Board"
+    },
+    "R47": {
+      "refdes": "R47",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3367.37,
+        2575.62,
+        3508.17,
+        2614.61
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3691.2,
+        1718.68,
+        3737.34,
+        1744.32
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1354.21,
+        1206.54,
+        1380.22,
+        1259.4
+      ],
+      "board_name": "Main Board"
+    },
+    "C32": {
+      "refdes": "C32",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2863.6,
+        2415.77,
+        2904.7
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3637.36,
+        1880.21,
+        3686.06,
+        1907.55
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1542.15,
+        1475.03,
+        1566.48,
+        1526.21
+      ],
+      "board_name": "Main Board"
+    },
+    "R39": {
+      "refdes": "R39",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3365.2,
+        2378.5,
+        3508.18,
+        2418.57
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3463.86,
+        1917.81,
+        3518.56,
+        1941.75
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1328.19,
+        1070.61,
+        1353.37,
+        1117.6
+      ],
+      "board_name": "Main Board"
+    },
+    "C26": {
+      "refdes": "C26",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2709.13,
+        2417.99,
+        2756.91
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3376.68,
+        1904.15,
+        3431.38,
+        1930.63
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1563.12,
+        1002.65,
+        1589.97,
+        1054.67
+      ],
+      "board_name": "Main Board"
+    },
+    "C24": {
+      "refdes": "C24",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2281.31,
+        2666.91,
+        2423.55,
+        2704.69
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3376.69,
+        1747.75,
+        3428.82,
+        1777.65
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1545.51,
+        852.46,
+        1568.99,
+        904.48
+      ],
+      "board_name": "Main Board"
+    },
+    "C22": {
+      "refdes": "C22",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2273.54,
+        2613.57,
+        2419.11,
+        2658.01
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3282.68,
+        1707.57,
+        3336.52,
+        1736.63
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1289.61,
+        1393.64,
+        1316.45,
+        1438.95
+      ],
+      "board_name": "Main Board"
+    },
+    "R32": {
+      "refdes": "R32",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3365.2,
+        2230.11,
+        3509.26,
+        2279.93
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3271.57,
+        1643.47,
+        3327.11,
+        1669.11
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1233.38,
+        1484.26,
+        1258.56,
+        1531.25
+      ],
+      "board_name": "Main Board"
+    },
+    "R35": {
+      "refdes": "R35",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3367.37,
+        2282.1,
+        3506.01,
+        2324.34
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3456.17,
+        1658.86,
+        3513.43,
+        1687.92
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        979.15,
+        1102.49,
+        1005.16,
+        1159.55
+      ],
+      "board_name": "Main Board"
+    },
+    "R37": {
+      "refdes": "R37",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3366.28,
+        2329.75,
+        3501.67,
+        2370.91
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3521.12,
+        1698.17,
+        3573.26,
+        1722.95
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1347.49,
+        881.83,
+        1372.66,
+        934.69
+      ],
+      "board_name": "Main Board"
+    },
+    "C30": {
+      "refdes": "C30",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.2,
+        2812.48,
+        2422.44,
+        2854.7
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3566.41,
+        1732.36,
+        3615.98,
+        1757.14
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1543.0,
+        1360.92,
+        1564.81,
+        1412.1
+      ],
+      "board_name": "Main Board"
+    },
+    "R43": {
+      "refdes": "R43",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3365.2,
+        2479.22,
+        3503.84,
+        2520.38
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3561.29,
+        1784.49,
+        3615.13,
+        1807.57
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1394.49,
+        1361.76,
+        1419.66,
+        1408.75
+      ],
+      "board_name": "Main Board"
+    },
+    "R45": {
+      "refdes": "R45",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.03,
+        2531.2,
+        3512.51,
+        2568.03
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3630.55,
+        1932.59,
+        3682.49,
+        1957.63
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1383.57,
+        1465.8,
+        1409.58,
+        1507.74
+      ],
+      "board_name": "Main Board"
+    },
+    "R28": {
+      "refdes": "R28",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.03,
+        2130.47,
+        3506.01,
+        2173.79
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2924.06,
+        1785.6,
+        2984.34,
+        1810.62
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1406.68,
+        2125.97,
+        1435.74,
+        2169.91
+      ],
+      "board_name": "Main Board"
+    },
+    "C101": {
+      "refdes": "C101",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3372.78,
+        1200.08,
+        3552.58,
+        1250.99
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3784.27,
+        2299.97,
+        3843.95,
+        2327.65
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "C102": {
+      "refdes": "C102",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3372.78,
+        1200.08,
+        3552.58,
+        1250.99
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3774.75,
+        2494.59,
+        3843.95,
+        2519.67
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "C44": {
+      "refdes": "C44",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3378.19,
+        662.86,
+        3513.58,
+        706.18
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3374.97,
+        2149.07,
+        3427.91,
+        2174.39
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        615.86,
+        1322.33,
+        644.38,
+        1367.63
+      ],
+      "board_name": "Main Board"
+    },
+    "C36": {
+      "refdes": "C36",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2279.1,
+        3059.17,
+        2414.66,
+        3095.84
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2955.97,
+        2326.34,
+        3007.77,
+        2352.81
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        882.68,
+        1936.5,
+        904.49,
+        1980.97
+      ],
+      "board_name": "Main Board"
+    },
+    "D01": {
+      "refdes": "D01",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2293.29,
+        994.85,
+        2434.39,
+        1046.16
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3022.73,
+        2379.29,
+        3067.62,
+        2405.76
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        727.71,
+        1936.53,
+        749.82,
+        1980.76
+      ],
+      "board_name": "Main Board"
+    },
+    "D02": {
+      "refdes": "D02",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2293.29,
+        994.85,
+        2434.39,
+        1046.16
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3023.88,
+        2454.1,
+        3081.44,
+        2479.42
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        676.26,
+        1833.3,
+        698.91,
+        1884.48
+      ],
+      "board_name": "Main Board"
+    },
+    "C37": {
+      "refdes": "C37",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2279.1,
+        3059.17,
+        2414.66,
+        3095.84
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2954.81,
+        2518.56,
+        3005.46,
+        2548.5
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        562.16,
+        1887.84,
+        593.2,
+        1933.98
+      ],
+      "board_name": "Main Board"
+    },
+    "C39": {
+      "refdes": "C39",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2277.99,
+        3100.28,
+        2415.78,
+        3149.18
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3163.16,
+        2477.12,
+        3212.66,
+        2503.59
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        626.77,
+        1741.84,
+        653.62,
+        1790.5
+      ],
+      "board_name": "Main Board"
+    },
+    "C41": {
+      "refdes": "C41",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3373.87,
+        565.38,
+        3513.59,
+        608.7
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3263.31,
+        2477.12,
+        3310.5,
+        2503.59
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        611.66,
+        1609.28,
+        638.5,
+        1649.55
+      ],
+      "board_name": "Main Board"
+    },
+    "R59": {
+      "refdes": "R59",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.04,
+        3066.27,
+        3502.76,
+        3106.34
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3182.74,
+        2554.24,
+        3237.98,
+        2578.41
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        535.31,
+        1672.2,
+        557.11,
+        1725.9
+      ],
+      "board_name": "Main Board"
+    },
+    "R61": {
+      "refdes": "R61",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3360.88,
+        3115.01,
+        3498.42,
+        3155.07
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3262.16,
+        2579.57,
+        3307.06,
+        2607.2
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        443.01,
+        1660.46,
+        467.35,
+        1711.64
+      ],
+      "board_name": "Main Board"
+    },
+    "D04": {
+      "refdes": "D04",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2287.59,
+        1046.16,
+        2438.67,
+        1090.34
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3335.83,
+        2574.97,
+        3385.33,
+        2599.14
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        463.15,
+        1235.9,
+        490.84,
+        1291.28
+      ],
+      "board_name": "Main Board"
+    },
+    "C43": {
+      "refdes": "C43",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3376.03,
+        613.03,
+        3513.58,
+        657.44
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3340.43,
+        2518.56,
+        3389.93,
+        2543.88
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        542.01,
+        1458.25,
+        568.02,
+        1505.23
+      ],
+      "board_name": "Main Board"
+    },
+    "I6": {
+      "refdes": "I6",
+      "component_type": "Other",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 5,
+      "bbox_schema": [
+        3280.57,
+        2526.62,
+        3307.04,
+        2555.4
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "C45": {
+      "refdes": "C45",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3378.19,
+        662.86,
+        3513.58,
+        706.18
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3366.09,
+        2702.91,
+        3424.13,
+        2729.47
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        415.33,
+        1240.93,
+        443.01,
+        1288.76
+      ],
+      "board_name": "Main Board"
+    },
+    "C42": {
+      "refdes": "C42",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3376.03,
+        613.03,
+        3513.58,
+        657.44
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3340.5,
+        2327.04,
+        3394.62,
+        2353.61
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        745.07,
+        1495.16,
+        771.91,
+        1548.86
+      ],
+      "board_name": "Main Board"
+    },
+    "C40": {
+      "refdes": "C40",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3373.87,
+        565.38,
+        3513.59,
+        608.7
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3261.78,
+        2383.12,
+        3312.95,
+        2409.68
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        767.72,
+        1622.7,
+        790.37,
+        1672.2
+      ],
+      "board_name": "Main Board"
+    },
+    "C38": {
+      "refdes": "C38",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2277.99,
+        3100.28,
+        2415.78,
+        3149.18
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3164.37,
+        2378.2,
+        3218.49,
+        2407.72
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        796.24,
+        1762.81,
+        823.94,
+        1807.28
+      ],
+      "board_name": "Main Board"
+    },
+    "R58": {
+      "refdes": "R58",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.04,
+        3066.27,
+        3502.76,
+        3106.34
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3182.08,
+        2287.68,
+        3238.18,
+        2311.3
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        810.51,
+        1622.7,
+        835.69,
+        1674.72
+      ],
+      "board_name": "Main Board"
+    },
+    "R60": {
+      "refdes": "R60",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3360.88,
+        3115.01,
+        3498.42,
+        3155.07
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3260.8,
+        2271.94,
+        3314.92,
+        2293.59
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        901.97,
+        1564.8,
+        928.81,
+        1620.18
+      ],
+      "board_name": "Main Board"
+    },
+    "D103": {
+      "refdes": "D103",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 5,
+      "bbox_schema": [
+        3374.94,
+        2268.0,
+        3433.98,
+        2294.57
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": null,
+      "bbox_pcb": null,
+      "board_name": null
+    },
+    "D07": {
+      "refdes": "D07",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 5,
+      "bbox_schema": [
+        2334.11,
+        2533.36,
+        2390.07,
+        2559.64
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        981.67,
+        1620.18,
+        1002.65,
+        1669.68
+      ],
+      "board_name": "Main Board"
+    },
+    "R14": {
+      "refdes": "R14",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3369.53,
+        1793.62,
+        3439.93,
+        1829.36
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2256.12,
+        2594.4,
+        2311.22,
+        2618.99
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1045.35,
+        1894.78,
+        1069.83,
+        1936.1
+      ],
+      "board_name": "Main Board"
+    },
+    "R13": {
+      "refdes": "R13",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3368.45,
+        1743.8,
+        3447.51,
+        1787.12
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2196.77,
+        2635.95,
+        2243.39,
+        2662.23
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1000.2,
+        1925.38,
+        1030.05,
+        1969.77
+      ],
+      "board_name": "Main Board"
+    },
+    "C54": {
+      "refdes": "C54",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3374.95,
+        1011.62,
+        3444.27,
+        1050.61
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2057.72,
+        2589.31,
+        2108.59,
+        2613.05
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1217.47,
+        2441.33,
+        1238.03,
+        2493.77
+      ],
+      "board_name": "Main Board"
+    },
+    "R16": {
+      "refdes": "R16",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3370.62,
+        1891.1,
+        3443.18,
+        1933.34
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2070.43,
+        2665.62,
+        2123.0,
+        2693.6
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1152.99,
+        2271.25,
+        1180.63,
+        2320.86
+      ],
+      "board_name": "Main Board"
+    },
+    "D05": {
+      "refdes": "D05",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2290.45,
+        1143.09,
+        2434.39,
+        1190.12
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2343.44,
+        2936.93,
+        2405.34,
+        2966.61
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1222.88,
+        1884.07,
+        1248.13,
+        1933.05
+      ],
+      "board_name": "Main Board"
+    },
+    "D06": {
+      "refdes": "D06",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2290.45,
+        1143.09,
+        2434.39,
+        1190.12
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2347.69,
+        2990.35,
+        2405.34,
+        3016.63
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1223.65,
+        1982.02,
+        1249.67,
+        2031.76
+      ],
+      "board_name": "Main Board"
+    },
+    "C52": {
+      "refdes": "C52",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3374.96,
+        909.81,
+        3449.68,
+        953.13
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2258.66,
+        2964.91,
+        2306.99,
+        2994.59
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        998.66,
+        2031.76,
+        1025.44,
+        2080.74
+      ],
+      "board_name": "Main Board"
+    },
+    "R15": {
+      "refdes": "R15",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3368.45,
+        1844.52,
+        3444.27,
+        1883.51
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2134.02,
+        2947.95,
+        2184.04,
+        2976.78
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1101.21,
+        2126.65,
+        1125.7,
+        2175.63
+      ],
+      "board_name": "Main Board"
+    },
+    "C53": {
+      "refdes": "C53",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3376.03,
+        961.8,
+        3452.93,
+        1000.78
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        2022.96,
+        2947.95,
+        2078.07,
+        2975.93
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1254.32,
+        2248.57,
+        1277.0,
+        2293.93
+      ],
+      "board_name": "Main Board"
+    },
+    "D09": {
+      "refdes": "D09",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 5,
+      "bbox_schema": [
+        2101.8,
+        2786.01,
+        2181.5,
+        2822.47
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1157.84,
+        2022.58,
+        1182.32,
+        2075.38
+      ],
+      "board_name": "Main Board"
+    },
+    "D08": {
+      "refdes": "D08",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": null,
+      "bbox_table": null,
+      "page_schema": 5,
+      "bbox_schema": [
+        2492.94,
+        3075.22,
+        2552.44,
+        3107.4
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1182.04,
+        2608.58,
+        1208.26,
+        2661.72
+      ],
+      "board_name": "Main Board"
+    },
+    "R51": {
+      "refdes": "R51",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3357.62,
+        2724.01,
+        3437.76,
+        2759.75
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1168.27,
+        2210.41,
+        1220.55,
+        2238.82
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2567.44,
+        2382.78,
+        2629.34,
+        2414.72
+      ],
+      "board_name": "Main Board"
+    },
+    "R54": {
+      "refdes": "R54",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3364.12,
+        2869.13,
+        3435.6,
+        2907.05
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1279.04,
+        2237.82,
+        1339.66,
+        2269.14
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2630.34,
+        2649.31,
+        2684.24,
+        2676.26
+      ],
+      "board_name": "Main Board"
+    },
+    "R55": {
+      "refdes": "R55",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3354.38,
+        2915.71,
+        3442.1,
+        2964.45
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1386.13,
+        2211.54,
+        1437.67,
+        2237.82
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2623.36,
+        2700.21,
+        2684.25,
+        2728.16
+      ],
+      "board_name": "Main Board"
+    },
+    "VR03": {
+      "refdes": "VR03",
+      "component_type": "Potentiometer",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 8,
+      "bbox_table": [
+        416.23,
+        716.84,
+        533.39,
+        763.09
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1551.83,
+        2247.92,
+        1644.77,
+        2274.2
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3034.62,
+        2941.78,
+        3112.48,
+        2976.72
+      ],
+      "board_name": "Main Board"
+    },
+    "C35": {
+      "refdes": "C35",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2277.99,
+        3003.6,
+        2354.66,
+        3051.38
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1400.27,
+        2312.58,
+        1451.81,
+        2337.84
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2843.96,
+        2542.49,
+        2902.86,
+        2575.43
+      ],
+      "board_name": "Main Board"
+    },
+    "R57": {
+      "refdes": "R57",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.03,
+        3013.2,
+        3438.85,
+        3057.61
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1409.37,
+        2363.1,
+        1464.94,
+        2396.44
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3022.64,
+        2511.55,
+        3084.54,
+        2536.51
+      ],
+      "board_name": "Main Board"
+    },
+    "R56": {
+      "refdes": "R56",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3364.12,
+        2968.78,
+        3442.1,
+        3006.69
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1312.38,
+        2447.95,
+        1359.86,
+        2472.2
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2626.34,
+        2750.12,
+        2686.24,
+        2784.06
+      ],
+      "board_name": "Main Board"
+    },
+    "C34": {
+      "refdes": "C34",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2277.99,
+        2958.05,
+        2355.77,
+        2994.72
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1244.69,
+        2476.24,
+        1295.21,
+        2504.53
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2573.43,
+        2623.36,
+        2634.33,
+        2649.3
+      ],
+      "board_name": "Main Board"
+    },
+    "R52": {
+      "refdes": "R52",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3365.2,
+        2772.74,
+        3434.52,
+        2808.48
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1095.16,
+        2477.26,
+        1148.72,
+        2505.55
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2562.46,
+        2330.87,
+        2628.34,
+        2363.81
+      ],
+      "board_name": "Main Board"
+    },
+    "R50": {
+      "refdes": "R50",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3360.87,
+        2676.35,
+        3438.85,
+        2713.18
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        981.0,
+        2448.97,
+        1033.54,
+        2473.22
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2566.45,
+        2276.97,
+        2631.33,
+        2306.92
+      ],
+      "board_name": "Main Board"
+    },
+    "C33": {
+      "refdes": "C33",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2277.99,
+        2910.26,
+        2350.21,
+        2950.26
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        964.84,
+        2366.13,
+        1019.4,
+        2393.41
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2857.93,
+        2266.99,
+        2912.83,
+        2294.94
+      ],
+      "board_name": "Main Board"
+    },
+    "C50": {
+      "refdes": "C50",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3374.95,
+        814.49,
+        3447.52,
+        856.73
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1228.52,
+        2300.46,
+        1282.08,
+        2325.72
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2667.27,
+        2583.43,
+        2725.17,
+        2611.38
+      ],
+      "board_name": "Main Board"
+    },
+    "R53": {
+      "refdes": "R53",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3363.04,
+        2822.57,
+        3439.94,
+        2861.55
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1168.92,
+        2369.16,
+        1218.42,
+        2394.42
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2615.36,
+        2492.59,
+        2670.26,
+        2520.54
+      ],
+      "board_name": "Main Board"
+    },
+    "C13": {
+      "refdes": "C13",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2284.65,
+        2372.43,
+        2355.77,
+        2405.77
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1426.55,
+        2481.3,
+        1470.99,
+        2501.51
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2605.38,
+        2815.01,
+        2650.3,
+        2843.95
+      ],
+      "board_name": "Main Board"
+    },
+    "C14": {
+      "refdes": "C14",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2274.65,
+        2415.77,
+        2353.55,
+        2459.11
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        1065.87,
+        2239.84,
+        1116.39,
+        2267.12
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        2820.0,
+        2317.89,
+        2866.92,
+        2342.85
+      ],
+      "board_name": "Main Board"
+    },
+    "R18": {
+      "refdes": "R18",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3368.45,
+        1986.41,
+        3444.27,
+        2028.65
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        3816.55,
+        2059.38,
+        3861.99,
+        2086.85
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1011.88,
+        1366.8,
+        1037.06,
+        1407.07
+      ],
+      "board_name": "Main Board"
+    },
+    "J002": {
+      "refdes": "J002",
+      "component_type": "Connector",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2282.0,
+        1730.83,
+        2374.5,
+        1772.63
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        700.75,
+        2505.35,
+        797.55,
+        2547.25
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3055.99,
+        2265.56,
+        3136.49,
+        2292.72
+      ],
+      "board_name": "Main Board"
+    },
+    "J001": {
+      "refdes": "J001",
+      "component_type": "Connector",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2278.2,
+        1686.49,
+        2378.3,
+        1728.29
+      ],
+      "page_schema": 5,
+      "bbox_schema": [
+        544.36,
+        1471.46,
+        654.92,
+        1517.39
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        4006.31,
+        1072.77,
+        4071.47,
+        1111.39
+      ],
+      "board_name": "Main Board"
+    },
+    "R42": {
+      "refdes": "R42",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3365.2,
+        2479.22,
+        3503.84,
+        2520.38
+      ],
+      "page_schema": null,
+      "bbox_schema": null,
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1571.52,
+        1192.28,
+        1595.85,
+        1235.06
+      ],
+      "board_name": "Main Board"
+    },
+    "C56": {
+      "refdes": "C56",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3376.03,
+        1052.78,
+        3507.09,
+        1101.52
+      ],
+      "page_schema": null,
+      "bbox_schema": null,
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1239.26,
+        1073.97,
+        1263.59,
+        1120.96
+      ],
+      "board_name": "Main Board"
+    },
+    "D03": {
+      "refdes": "D03",
+      "component_type": "Diode",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2287.59,
+        1046.16,
+        2438.67,
+        1090.34
+      ],
+      "page_schema": null,
+      "bbox_schema": null,
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        637.67,
+        1428.88,
+        664.51,
+        1480.9
+      ],
+      "board_name": "Main Board"
+    },
+    "C51": {
+      "refdes": "C51",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3378.2,
+        862.15,
+        3443.19,
+        897.89
+      ],
+      "page_schema": null,
+      "bbox_schema": null,
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1142.54,
+        1755.5,
+        1164.73,
+        1796.06
+      ],
+      "board_name": "Main Board"
+    },
+    "R17": {
+      "refdes": "R17",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        3367.37,
+        1940.92,
+        3442.09,
+        1976.66
+      ],
+      "page_schema": null,
+      "bbox_schema": null,
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        1133.85,
+        2563.22,
+        1162.91,
+        2606.44
+      ],
+      "board_name": "Main Board"
+    },
+    "C01": {
+      "refdes": "C01",
+      "component_type": "Capacitor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.21,
+        2077.97,
+        2421.33,
+        2120.19
+      ],
+      "page_schema": null,
+      "bbox_schema": null,
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3795.53,
+        623.77,
+        3835.17,
+        648.45
+      ],
+      "board_name": "Main Board"
+    },
+    "R63": {
+      "refdes": "R63",
+      "component_type": "Resistor",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 8,
+      "bbox_table": [
+        423.94,
+        571.93,
+        558.06,
+        618.18
+      ],
+      "page_schema": null,
+      "bbox_schema": null,
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        3880.99,
+        799.11,
+        3935.61,
+        826.42
+      ],
+      "board_name": "Main Board"
+    },
+    "PT001": {
+      "refdes": "PT001",
+      "component_type": "Test Point",
+      "value": null,
+      "tolerance": null,
+      "part_number": null,
+      "page_bom": 7,
+      "bbox_table": [
+        2280.74,
+        1786.58,
+        2394.78,
+        1830.93
+      ],
+      "page_schema": null,
+      "bbox_schema": null,
+      "rotation_schema": 0.0,
+      "page_pcb": 6,
+      "bbox_pcb": [
+        798.95,
+        1099.87,
+        830.09,
+        1188.81
+      ],
+      "board_name": "Main Board"
+    }
+  }
+}

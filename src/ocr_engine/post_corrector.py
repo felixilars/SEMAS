@@ -5,7 +5,6 @@ Resolves raw OCR noisy tokens against dynamic manual lexicons (D_BOM) using weig
 and a 3-tier Human-in-the-Loop (HITL) triage system.
 """
 
-import re
 
 OPTICAL_CONFUSION_COSTS = {
     # Extreme optical confusion pairs (cost = 0.15)
