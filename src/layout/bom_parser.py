@@ -5,7 +5,6 @@ Extracts electronic component references from tabular Bill of Materials pages us
 """
 
 import re
-import numpy as np
 
 from src.graph.entities import BBox, BOMItem
 from src.layout.gutter_detector import find_column_slices

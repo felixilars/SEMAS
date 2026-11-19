@@ -4,7 +4,6 @@ Dynamic Vertical Gutters & Column Segmentation Module
 Detects vertical whitespace gutters between text columns using Vertical Projection Histograms, automatically segmenting single-column, right-aligned, and multi-column BOM layouts without hardcoded margin percentages.
 """
 
-from pathlib import Path
 import cv2
 import numpy as np
 

@@ -1,12 +1,8 @@
 """
 Manual Registry
 ===============
-Single place for the facts about each service manual: identifier, PDF and page folder
-name, device name, dev/test split and hand-sorted page table. They live in
-data/manifests/manuals.json, so that code never names a manual.
+Single place for the facts about each service manual: identifier, PDF and page folder name, device name, dev/test split and hand-sorted page table. They live in data/manifests/manuals.json, so that code never names a manual.
 """
-
-from __future__ import annotations
 
 import json
 from pathlib import Path
@@ -20,7 +16,6 @@ RAW_MANUALS_DIR = PROJECT_ROOT / "data" / "raw_manuals"
 EXTRACTED_MANUALS_DIR = PROJECT_ROOT / "data" / "extracted_manuals"
 PAGE_ROLES = ("bom", "schematic", "pcb")
 SPLITS = ("train", "dev", "test", "unused")
-
 
 class ManualEntry(BaseModel):
     """ Registry entry of one service manual."""
@@ -51,7 +46,6 @@ class ManualEntry(BaseModel):
                 raise ValueError("Page numbers are 1-based, got " + str(numbers))
         return {role: sorted(set(value.get(role, []))) for role in PAGE_ROLES}
 
-
 def normalize_key(text):
     """ Comparison key of an identifier or folder name.
 
@@ -60,7 +54,6 @@ def normalize_key(text):
     Returns: Lowercase string without spaces, dashes or underscores.
     """
     return str(text).replace("_", "").replace("-", "").replace(" ", "").lower()
-
 
 def load_manifest(manifest_file=None):
     """ Read and validate the registry.
@@ -81,7 +74,6 @@ def load_manifest(manifest_file=None):
         seen.add(key)
     return manuals
 
-
 def get_manual_entry(name, manifest_file=None):
     """ Registry entry of a manual, found by identifier or folder name.
 
@@ -96,7 +88,6 @@ def get_manual_entry(name, manifest_file=None):
             return manual
     return None
 
-
 def manuals_in_split(split, manifest_file=None):
     """ Identifiers of the manuals of one split.
 
@@ -106,7 +97,6 @@ def manuals_in_split(split, manifest_file=None):
     Returns: List of identifiers in registry order.
     """
     return [m.manual_id for m in load_manifest(manifest_file) if m.split == split]
-
 
 def find_manual_dir(name, base_dir=None, manifest_file=None):
     """ Page folder of a registered manual.
@@ -125,7 +115,6 @@ def find_manual_dir(name, base_dir=None, manifest_file=None):
     if not folder.is_dir():
         raise FileNotFoundError("Page folder not found: " + str(folder))
     return folder
-
 
 def page_image_name(manual_id, page_number):
     """ File name of a rendered page.

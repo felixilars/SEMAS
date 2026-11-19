@@ -8,7 +8,6 @@ import json
 from pathlib import Path
 import sys
 import numpy as np
-import pytest
 
 sys.path.append(str(Path(__file__).parent.parent))
 

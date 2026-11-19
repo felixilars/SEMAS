@@ -1,10 +1,7 @@
-from pathlib import Path
-
 from src.ingestion.manifest import EXTRACTED_MANUALS_DIR, PAGE_ROLES, RAW_MANUALS_DIR, load_manifest, page_image_name
 
 RENDER_DPI = 300
 PDF_POINTS_PER_INCH = 72
-
 
 def registry_tables(manuals):
     """ Page tables and file name prefixes of the registered manuals, keyed by folder name.
@@ -14,7 +11,6 @@ def registry_tables(manuals):
     Returns: Tuple (pages by folder, manual identifier by folder).
     """
     return {m.folder: m.pages for m in manuals}, {m.folder: m.manual_id for m in manuals}
-
 
 def create_directory_structure(output_base_dir, manuals_dict):
     """ Create folder hierarchy for manual pages.
@@ -32,7 +28,6 @@ def create_directory_structure(output_base_dir, manuals_dict):
 
     print("[INFO] Created directory structure at: " + str(output_base_dir))
 
-
 def build_pdf_index(raw_manuals_dir):
     """ Build a lookup index mapping manual stem names to PDF paths in a single directory walk.
 
@@ -43,7 +38,6 @@ def build_pdf_index(raw_manuals_dir):
     if not raw_manuals_dir.exists():
         return {}
     return {f.stem: f for f in raw_manuals_dir.rglob("*.pdf")}
-
 
 def extract_pages_to_images(manuals_dict, raw_manuals_dir, output_base_dir, device_names, force=False):
     """ Extract specified pages to PNG images and save to category folders.
@@ -113,7 +107,6 @@ def main():
     create_directory_structure(EXTRACTED_MANUALS_DIR, pages_table)
     if RAW_MANUALS_DIR.exists():
         extract_pages_to_images(pages_table, RAW_MANUALS_DIR, EXTRACTED_MANUALS_DIR, manual_ids)
-
 
 if __name__ == "__main__":
     main()

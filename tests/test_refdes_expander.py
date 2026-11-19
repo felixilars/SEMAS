@@ -6,7 +6,6 @@ Tests range expansion, comma-delimited list expansion, prefix inheritance, and r
 
 import sys
 from pathlib import Path
-import pytest
 
 sys.path.append(str(Path(__file__).parent.parent))
 

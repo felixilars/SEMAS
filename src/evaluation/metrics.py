@@ -6,8 +6,6 @@ boxes. Boxes are [x1, y1, x2, y2] with x1 <= x2 and y1 <= y2, in the same coordi
 system on both sides (pixels of the 300 DPI page for the ground truth).
 """
 
-from __future__ import annotations
-
 
 def box_area(box):
     """ Area of a box.

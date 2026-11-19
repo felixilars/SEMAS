@@ -7,10 +7,7 @@ from schematic diagram bounding boxes using multi-angle orthogonal text orientat
 
 from pathlib import Path
 import json
-import re
-import numpy as np
 
-from src.ocr_engine.base import BaseOCREngine
 from src.ocr_engine.rotations import read_text_with_orthogonal_rotations
 from src.ocr_engine.post_corrector import split_refdes_and_spec
 
