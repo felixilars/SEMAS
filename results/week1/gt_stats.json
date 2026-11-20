@@ -1,0 +1,94 @@
+{
+  "manuals": [
+    {
+      "manual_id": "McIntosh_MC_2100",
+      "split": "test",
+      "components": 162,
+      "views": {
+        "bom": 87,
+        "schematic": 106,
+        "pcb": 111
+      },
+      "tri_sync_candidates": 36,
+      "coverage": {
+        "schematic+pcb": 64,
+        "bom": 45,
+        "bom+schematic+pcb": 36,
+        "pcb": 8,
+        "bom+pcb": 3,
+        "schematic": 3,
+        "bom+schematic": 3
+      },
+      "candidates_by_type": {
+        "Transistor": 17,
+        "Capacitor": 11,
+        "Diode": 6,
+        "Resistor": 2
+      },
+      "pages": {
+        "bom": [
+          10
+        ],
+        "schematic": [
+          7,
+          8
+        ],
+        "pcb": [
+          6,
+          8
+        ]
+      },
+      "pages_not_in_registry": {
+        "bom": [],
+        "schematic": [],
+        "pcb": []
+      }
+    },
+    {
+      "manual_id": "Toshiba_SY_330",
+      "split": "dev",
+      "components": 158,
+      "views": {
+        "bom": 148,
+        "schematic": 150,
+        "pcb": 146
+      },
+      "tri_sync_candidates": 135,
+      "coverage": {
+        "bom+schematic+pcb": 135,
+        "bom+pcb": 8,
+        "schematic": 7,
+        "bom+schematic": 5,
+        "schematic+pcb": 3
+      },
+      "candidates_by_type": {
+        "Capacitor": 56,
+        "Resistor": 55,
+        "Transistor": 7,
+        "Diode": 5,
+        "Switch": 4,
+        "Potentiometer": 4,
+        "Integrated Circuit": 2,
+        "Connector": 2
+      },
+      "pages": {
+        "bom": [
+          7,
+          8
+        ],
+        "schematic": [
+          2,
+          5
+        ],
+        "pcb": [
+          6
+        ]
+      },
+      "pages_not_in_registry": {
+        "bom": [],
+        "schematic": [],
+        "pcb": []
+      }
+    }
+  ]
+}

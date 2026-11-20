@@ -2876,15 +2876,20 @@
       "part_number": null,
       "page_bom": null,
       "bbox_table": null,
-      "page_schema": null,
-      "bbox_schema": null,
-      "rotation_schema": 0.0,
-      "page_pcb": 8,
-      "bbox_pcb": [
+      "page_schema": 8,
+      "bbox_schema": [
         1479.17,
         1474.95,
         1500.95,
         1534.68
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 8,
+      "bbox_pcb": [
+        403.44,
+        2575.26,
+        427.17,
+        2634.97
       ],
       "board_name": "Input Section Board"
     },
@@ -2926,15 +2931,20 @@
         283.45,
         1147.16
       ],
-      "page_schema": null,
-      "bbox_schema": null,
-      "rotation_schema": 0.0,
-      "page_pcb": 8,
-      "bbox_pcb": [
+      "page_schema": 8,
+      "bbox_schema": [
         1281.01,
         1472.14,
         1302.79,
         1535.38
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 8,
+      "bbox_pcb": [
+        515.21,
+        2465.03,
+        541.24,
+        2542.35
       ],
       "board_name": "Input Section Board"
     },
@@ -2951,15 +2961,20 @@
         283.45,
         1147.16
       ],
-      "page_schema": null,
-      "bbox_schema": null,
-      "rotation_schema": 0.0,
-      "page_pcb": 8,
-      "bbox_pcb": [
+      "page_schema": 8,
+      "bbox_schema": [
         1120.09,
         1467.93,
         1141.87,
         1530.47
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 8,
+      "bbox_pcb": [
+        239.61,
+        2462.73,
+        267.17,
+        2534.69
       ],
       "board_name": "Input Section Board"
     },
@@ -2996,15 +3011,20 @@
       "part_number": null,
       "page_bom": null,
       "bbox_table": null,
-      "page_schema": null,
-      "bbox_schema": null,
-      "rotation_schema": 0.0,
-      "page_pcb": 8,
-      "bbox_pcb": [
+      "page_schema": 8,
+      "bbox_schema": [
         895.23,
         1470.73,
         921.23,
         1535.38
+      ],
+      "rotation_schema": 0.0,
+      "page_pcb": 8,
+      "bbox_pcb": [
+        349.09,
+        2568.38,
+        374.35,
+        2637.28
       ],
       "board_name": "Input Section Board"
     },

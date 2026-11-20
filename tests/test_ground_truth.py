@@ -32,7 +32,7 @@ def test_real_files_load():
 def test_tri_sync_candidates_on_real_files():
     """ Verify the number of components annotated in all three views."""
     assert len(load_ground_truth(GT_DIR / "Toshiba_SY_330.json").tri_sync_candidates()) == 135
-    assert len(load_ground_truth(GT_DIR / "McIntosh_MC_2100.json").tri_sync_candidates()) == 34
+    assert len(load_ground_truth(GT_DIR / "McIntosh_MC_2100.json").tri_sync_candidates()) == 36
 
 def test_refdes_is_normalized():
     """ Verify RefDes are stripped and uppercased."""
