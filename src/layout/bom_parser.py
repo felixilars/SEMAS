@@ -216,7 +216,7 @@ class BOMTableParser:
                 full_y1 = crop_box[1] / float(img_h)
                 full_x2 = (col_x1 + crop_box[2]) / float(img_w)
                 full_y2 = crop_box[3] / float(img_h)
-                bbox = BBox(full_x1, full_y1, full_x2, full_y2)
+                bbox = BBox(x1=full_x1, y1=full_y1, x2=full_x2, y2=full_y2)
             else:
                 bbox = None
 

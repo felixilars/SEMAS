@@ -1,91 +1,182 @@
 """
-Entities & Data Contracts Module
-=================================
-Provides lightweight foundational entities for representing bounding box geometry and extracted Bill of Materials (BOM) tabular entries.
+Data Model
+==========
+Pydantic v2 models of the recognition results: boxes in page-normalized coordinates, parts
+list rows, occurrences of a RefDes in one view, and the graph that links the three views of
+a manual.
 """
 
-class BBox:
-    """ Normalized bounding box representation in [0.0, 1.0] coordinate space."""
+from pathlib import Path
+from typing import Dict, List, Optional
 
-    def __init__(self, x1, y1, x2, y2):
-        """ Initialize normalized bounding box with coordinate validation.
+from pydantic import BaseModel, Field, field_validator, model_validator
 
-        Args:
-          - x1 (float) : Normalized left boundary [0.0, 1.0].
-          - y1 (float) : Normalized top boundary [0.0, 1.0].
-          - x2 (float) : Normalized right boundary [0.0, 1.0].
-          - y2 (float) : Normalized bottom boundary [0.0, 1.0].
-        """
-        # Enforce boundary clamp and ordering
-        self.x1 = max(0.0, min(1.0, float(x1)))
-        self.y1 = max(0.0, min(1.0, float(y1)))
-        self.x2 = max(0.0, min(1.0, float(x2)))
-        self.y2 = max(0.0, min(1.0, float(y2)))
+VIEWS = ("bom", "schematic", "pcb")
+STATUSES = ("auto", "review", "unresolved")
 
-        if self.x2 < self.x1:
-            raise ValueError("Invalid bounding box: x2 (" + str(self.x2) + ") < x1 (" + str(self.x1) + ")")
-        if self.y2 < self.y1:
-            raise ValueError("Invalid bounding box: y2 (" + str(self.y2) + ") < y1 (" + str(self.y1) + ")")
+class BBox(BaseModel):
+    """ Box in page-normalized coordinates [0, 1]."""
 
-    def to_pixel(self, img_width, img_height):
-        """ Convert normalized coordinates to absolute integer pixel coordinates.
+    x1: float
+    y1: float
+    x2: float
+    y2: float
 
-        Args:
-          - img_width (int) : Width of the source image in pixels.
-          - img_height (int) : Height of the source image in pixels.
-        Returns: List of four integers [px_x1, px_y1, px_x2, px_y2].
-        """
-        return [
-            int(round(self.x1 * img_width)),
-            int(round(self.y1 * img_height)),
-            int(round(self.x2 * img_width)),
-            int(round(self.y2 * img_height)),
-        ]
+    @field_validator("x1", "y1", "x2", "y2")
+    @classmethod
+    def clamp(cls, v):
+        """ Clamp to the page; crop remapping can overshoot by a pixel."""
+        return min(1.0, max(0.0, float(v)))
 
-    def compute_area(self):
-        """ Compute normalized rectangular area """
-        return (self.x2 - self.x1) * (self.y2 - self.y1)
+    @model_validator(mode="after")
+    def check_order(self):
+        """ Refuse inverted corners."""
+        if self.x2 < self.x1 or self.y2 < self.y1:
+            raise ValueError("Inverted box: " + str([self.x1, self.y1, self.x2, self.y2]))
+        return self
 
-    def to_dict(self):
-        """ Serialize bounding box to dictionary format """
-        return {
-            "x1": self.x1,
-            "y1": self.y1,
-            "x2": self.x2,
-            "y2": self.y2,
-        }
-
-class BOMItem:
-    """ Basic representation of an individual component record in a BOM table."""
-
-    def __init__(self, ref_des, raw_description, page_number, bbox=None, value=None, tolerance=None, part_number=None):
-        """ Initialize a single BOM item record.
+    @classmethod
+    def from_pixels(cls, box, width, height):
+        """ Normalize a pixel box.
 
         Args:
-          - ref_des (str) : Extracted reference designator (e.g. 'R101').
-          - raw_description (str) : Raw textual specification or description.
-          - page_number (int) : 1-based index of the source document page.
-          - bbox (BBox or None) : Normalized bounding box if available.
-          - value (str or None) : Electrical rating or value (e.g. '47k', '0.047uF').
-          - tolerance (str or None) : Rating tolerance (e.g. '5%', '+/-10%').
-          - part_number (str or None) : Manufacturer part number or commercial code.
+          - box (list) : [x1, y1, x2, y2] in pixels.
+          - width (int) : Page width in pixels.
+          - height (int) : Page height in pixels.
+        Returns: BBox.
         """
-        self.ref_des = str(ref_des).strip().upper()
-        self.raw_description = str(raw_description).strip()
-        self.page_number = int(page_number)
-        self.bbox = bbox
-        self.value = str(value).strip() if value else None
-        self.tolerance = str(tolerance).strip() if tolerance else None
-        self.part_number = str(part_number).strip() if part_number else None
+        return cls(x1=box[0] / width, y1=box[1] / height, x2=box[2] / width, y2=box[3] / height)
 
-    def to_dict(self):
-        """ Serialize BOM item to clean dictionary structure."""
-        return {
-            "ref_des": self.ref_des,
-            "raw_description": self.raw_description,
-            "page_number": self.page_number,
-            "bbox": self.bbox.to_dict() if self.bbox else None,
-            "value": self.value,
-            "tolerance": self.tolerance,
-            "part_number": self.part_number,
-        }
+    def to_pixels(self, width, height):
+        """ Pixel box on a page of the given size.
+
+        Args:
+          - width (int) : Page width in pixels.
+          - height (int) : Page height in pixels.
+        Returns: [x1, y1, x2, y2] as rounded integers.
+        """
+        return [round(self.x1 * width), round(self.y1 * height), round(self.x2 * width), round(self.y2 * height)]
+
+class BOMItem(BaseModel):
+    """ One row of a parts list, for one RefDes."""
+
+    ref_des: str = Field(..., min_length=1)
+    raw_description: str = ""
+    page_number: int = Field(..., ge=1)
+    bbox: Optional[BBox] = None
+    value: Optional[str] = None
+    tolerance: Optional[str] = None
+    part_number: Optional[str] = None
+
+    @field_validator("ref_des")
+    @classmethod
+    def normalize_refdes(cls, v):
+        """ Strip and uppercase the RefDes."""
+        return v.strip().upper()
+
+    @field_validator("raw_description")
+    @classmethod
+    def strip_description(cls, v):
+        """ Strip the description."""
+        return v.strip()
+
+    @field_validator("value", "tolerance", "part_number")
+    @classmethod
+    def strip_spec(cls, v):
+        """ Strip a specification; an empty one becomes None."""
+        return v.strip() or None if v is not None else None
+
+class Occurrence(BaseModel):
+    """ A RefDes found at one place of one view."""
+
+    ref_des: str = Field(..., min_length=1)
+    view: str = Field(..., description="bom, schematic or pcb")
+    page_number: int = Field(..., ge=1)
+    bbox: BBox
+    raw_text: str = Field(default="", description="Text read by OCR before correction")
+    confidence: float = Field(default=1.0, ge=0.0, le=1.0)
+    status: str = Field(default="auto", description="auto (linked), review (queued) or unresolved")
+    candidates: List[str] = Field(default_factory=list, description="Lexicon candidates, best first")
+
+    @field_validator("ref_des")
+    @classmethod
+    def normalize_refdes(cls, v):
+        """ Strip and uppercase the RefDes."""
+        return v.strip().upper()
+
+    @field_validator("view")
+    @classmethod
+    def check_view(cls, v):
+        """ Refuse an unknown view."""
+        if v not in VIEWS:
+            raise ValueError("Unknown view: " + str(v))
+        return v
+
+    @field_validator("status")
+    @classmethod
+    def check_status(cls, v):
+        """ Refuse an unknown status."""
+        if v not in STATUSES:
+            raise ValueError("Unknown status: " + str(v))
+        return v
+
+class Entity(BaseModel):
+    """ One component of the manual with its occurrences in each view."""
+
+    ref_des: str
+    value: Optional[str] = None
+    tolerance: Optional[str] = None
+    part_number: Optional[str] = None
+    occurrences: Dict[str, List[Occurrence]] = Field(default_factory=lambda: {v: [] for v in VIEWS})
+
+    @property
+    def is_tri_sync(self):
+        """ True when the component was found in the three views."""
+        return all(self.occurrences[v] for v in VIEWS)
+
+class ManualGraph(BaseModel):
+    """ Recognition result of one manual."""
+
+    manual_id: str
+    device_model: str
+    entities: Dict[str, Entity] = Field(default_factory=dict)
+    review_queue: List[Occurrence] = Field(default_factory=list)
+    unresolved: List[Occurrence] = Field(default_factory=list)
+
+    def add_occurrence(self, occurrence):
+        """ File an occurrence by its status: linked to its entity, queued, or unresolved.
+
+        Args:
+          - occurrence (Occurrence) : Occurrence to add.
+        Returns: The Entity it joined, or None for a queued or unresolved occurrence.
+        """
+        if occurrence.status == "review":
+            self.review_queue.append(occurrence)
+            return None
+        if occurrence.status == "unresolved":
+            self.unresolved.append(occurrence)
+            return None
+        entity = self.entities.setdefault(occurrence.ref_des, Entity(ref_des=occurrence.ref_des))
+        entity.occurrences[occurrence.view].append(occurrence)
+        return entity
+
+    def save_json(self, path):
+        """ Write the graph to a JSON file.
+
+        Args:
+          - path (str | Path) : Destination file; its folder is created when missing.
+        Returns: None.
+        """
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(self.model_dump_json(indent=2), encoding="utf-8")
+
+    @classmethod
+    def load_json(cls, path):
+        """ Read a graph from a JSON file.
+
+        Args:
+          - path (str | Path) : Graph file.
+        Returns: ManualGraph.
+        """
+        return cls.model_validate_json(Path(path).read_text(encoding="utf-8"))
